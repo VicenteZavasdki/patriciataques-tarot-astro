@@ -1,0 +1,230 @@
+---
+interface Props {
+  calLink?: string;
+  buttonText?: string;
+}
+
+const { calLink = 'patriciataques/leitura-de-tarot', buttonText = 'Agendar minha sessão' } = Astro.props;
+---
+
+<div class='booking-section' id='agendar'>
+  <div class='container-wide'>
+    <div class='booking-header'>
+      <h2 class='text-3xl md:text-4xl font-heading text-center mb-4'>
+        Agende sua <span class='gradient-gold bg-clip-text text-transparent'>Leitura</span>
+      </h2>
+      <p class='text-muted-foreground text-center mb-12 max-w-xl mx-auto'>
+        Escolha o melhor horário para você e reserve sua sessão de tarot.
+      </p>
+    </div>
+
+    <div class='booking-content'>
+      <div class='booking-info'>
+        <div class='info-card'>
+          <div class='info-icon'>🔮</div>
+          <h3>Sessão Online</h3>
+          <p>Videochamada via Google Meet ou Zoom</p>
+        </div>
+        <div class='info-card'>
+          <div class='info-icon'>📸</div>
+          <h3>Material Incluso</h3>
+          <p>Fotos, áudio e análise escrita</p>
+        </div>
+        <div class='info-card'>
+          <div class='info-icon'>⏱️</div>
+          <h3>60 Minutos</h3>
+          <p>Leitura completa e direcionamento</p>
+        </div>
+      </div>
+
+      <div class='booking-action'>
+        <button
+          class='cal-button'
+          data-cal-link={calLink}
+          data-cal-modal
+          data-cal-config='{&quot;theme&quot;:&quot;dark&quot;,&quot;styles&quot;:{&quot;background&quot;:&quot;#18181B&quot;,&quot;primaryColor&quot;:&quot;#D4A12C&quot;}}'
+        >
+          <span class='cal-button-icon'>📅</span>
+          <span class='cal-button-text'>{buttonText}</span>
+          <span class='cal-button-arrow'>→</span>
+        </button>
+
+        <p class='booking-note'>
+          ou entre em contato via <a href='#whatsapp'>WhatsApp</a>
+        </p>
+      </div>
+    </div>
+
+    <div class='booking-trust'>
+      <div class='trust-item'>
+        <span class='trust-icon'>✓</span>
+        <span>Confirmação imediata</span>
+      </div>
+      <div class='trust-item'>
+        <span class='trust-icon'>✓</span>
+        <span>Equipe qualificada</span>
+      </div>
+      <div class='trust-item'>
+        <span class='trust-icon'>✓</span>
+        <span>+300 leituras realizadas</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script async src='https://embed.cal.com/embed.js'></script>
+
+<style>
+  .booking-section {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, var(--color-background) 0%, var(--color-background-elevated) 100%);
+  }
+
+  .booking-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .booking-content {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  .booking-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .info-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--color-background-card);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .info-card:hover {
+    border-color: var(--color-gold-700);
+    transform: translateX(4px);
+  }
+
+  .info-icon {
+    font-size: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-gold-950);
+    border-radius: 0.75rem;
+  }
+
+  .info-card h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .info-card p {
+    font-size: 0.875rem;
+    color: var(--color-muted-foreground);
+    margin: 0;
+  }
+
+  .booking-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .cal-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 320px;
+    padding: 1.25rem 2rem;
+    background: linear-gradient(135deg, var(--color-gold-500), var(--color-gold-400));
+    color: var(--color-background);
+    font-size: 1.125rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(212, 161, 44, 0.4);
+  }
+
+  .cal-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px rgba(212, 161, 44, 0.6);
+  }
+
+  .cal-button:active {
+    transform: translateY(0);
+  }
+
+  .cal-button-icon {
+    font-size: 1.25rem;
+  }
+
+  .cal-button-text {
+    font-family: var(--font-heading);
+  }
+
+  .cal-button-arrow {
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  .cal-button:hover .cal-button-arrow {
+    transform: translateX(4px);
+  }
+
+  .booking-note {
+    font-size: 0.875rem;
+    color: var(--color-muted-foreground);
+  }
+
+  .booking-note a {
+    color: var(--color-gold-500);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+
+  .booking-note a:hover {
+    color: var(--color-gold-400);
+  }
+
+  .booking-trust {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-muted-foreground);
+  }
+
+  .trust-icon {
+    color: var(--color-gold-500);
+    font-weight: bold;
+  }
+</style>
