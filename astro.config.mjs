@@ -5,7 +5,7 @@ import react from '@astrojs/react';
 import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
-  site: 'https://patriciataques.com',
+  site: import.meta.env.SITE_URL || 'https://patriciataques.com',
   output: 'server',
   adapter: cloudflare({
     imageService: 'passthrough',

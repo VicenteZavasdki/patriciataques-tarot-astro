@@ -186,3 +186,42 @@ Muted:        #A1A1AA
 2. 🎧 Áudio - Gravação da sessão
 3. 🧭 Orientação - Direcionamento claro
 4. 📦 Entrega - Material escrito completo
+
+## 8. Deployment Status
+
+### Production
+- **URL**: https://patriciataques-tarot-astro.workers.dev
+- **Custom Domain**: patriciataques.com (configured in routes)
+- **CI/CD**: GitHub Actions → Cloudflare Workers (automatic on push)
+
+### Environment Variables (GitHub Secrets)
+- `CLOUDFLARE_API_TOKEN` - Cloudflare API token
+- `CLOUDFLARE_ACCOUNT_ID` - Cloudflare account ID
+- `PUBLIC_SITE_URL` - Production site URL
+- `PUBLIC_CALCOM_LINK` - Cal.com booking link
+- `PUBLIC_WHATSAPP` - WhatsApp number (351935917861)
+
+## 9. Testing
+
+### Unit Tests (21 passing)
+- `tests/unit/lib/utils.test.ts` - Utility functions
+- `tests/unit/lib/constants.test.ts` - Constants validation
+
+### Run Tests
+```bash
+npm test
+```
+
+## 10. TODO
+
+- [x] MVP Landing Page
+- [x] Cal.com Booking Integration
+- [x] WhatsApp Integration
+- [x] Security Headers (CSP, X-Frame-Options)
+- [x] CI/CD Pipeline
+- [x] Unit Tests
+- [x] Custom Domain Configuration
+- [ ] Stripe Payment Integration (future)
+- [ ] E2E Tests with Playwright
+- [ ] Analytics (Plausible)
+- [ ] Error Monitoring (Sentry)
