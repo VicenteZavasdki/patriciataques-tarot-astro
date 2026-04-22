@@ -2,9 +2,9 @@ export const siteConfig = {
   name: 'Patricia Taques',
   title: 'Patricia Taques | Tarot Reader & Spiritual Guide',
   description: 'Professional tarot readings to guide your path. Book your session and discover the wisdom of the cards.',
-  url: 'https://patriciataques.com',
+  url: import.meta.env.PUBLIC_SITE_URL || 'https://patriciataques.com',
   instagram: 'https://instagram.com/patriciataques',
-  whatsapp: '5511999999999',
+  whatsapp: import.meta.env.PUBLIC_WHATSAPP || '351935917861',
   email: 'contato@patriciataques.com'
 };
 

@@ -4,7 +4,8 @@ interface Props {
   buttonText?: string;
 }
 
-const { calLink = 'patriciataques/leitura-de-tarot', buttonText = 'Agendar minha sessão' } = Astro.props;
+const calLink = import.meta.env.PUBLIC_CALCOM_LINK || Astro.props.calLink || 'patriciataques/leitura-de-tarot';
+const buttonText = Astro.props.buttonText || 'Agendar minha sessão';
 ---
 
 <div class='booking-section' id='agendar'>
