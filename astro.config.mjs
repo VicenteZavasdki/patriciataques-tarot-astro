@@ -8,15 +8,13 @@ export default defineConfig({
   site: 'https://patriciataques.com',
   output: 'server',
   adapter: cloudflare({
-    imageService: 'passthrough'
+    imageService: 'passthrough',
+    entrypointResolution: 'auto'
   }),
   integrations: [
     react()
   ],
   vite: {
-    plugins: [tailwindcss()],
-    ssr: {
-      noExternal: ['@astrojs/cloudflare']
-    }
+    plugins: [tailwindcss()]
   }
 });
