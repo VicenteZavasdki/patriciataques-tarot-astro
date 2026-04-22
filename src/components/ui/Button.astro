@@ -1,0 +1,47 @@
+---
+interface Props {
+  variant?: 'default' | 'outline' | 'ghost' | 'link';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  href?: string;
+  class?: string;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+}
+
+const {
+  variant = 'default',
+  size = 'md',
+  href,
+  class: className = '',
+  type = 'button',
+  disabled = false
+} = Astro.props;
+
+const baseStyles = 'inline-flex items-center justify-center font-semibold transition-all duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2 focus:ring-offset-background disabled:opacity-50 disabled:cursor-not-allowed';
+
+const variants = {
+  default: 'bg-gold-500 text-background hover:bg-gold-400 active:bg-gold-600 glow-gold',
+  outline: 'border-2 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-background',
+  ghost: 'text-gold-400 hover:text-gold-300 hover:bg-gold-950/50',
+  link: 'text-gold-500 hover:text-gold-400 underline-offset-4 hover:underline'
+};
+
+const sizes = {
+  sm: 'px-3 py-1.5 text-sm',
+  md: 'px-5 py-2.5 text-base',
+  lg: 'px-7 py-3.5 text-lg',
+  xl: 'px-10 py-4 text-xl'
+};
+
+const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
+---
+
+{href ? (
+  <a href={href} class={classes}>
+    <slot />
+  </a>
+) : (
+  <button type={type} disabled={disabled} class={classes}>
+    <slot />
+  </button>
+)}
