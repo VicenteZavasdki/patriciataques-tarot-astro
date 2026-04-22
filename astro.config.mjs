@@ -15,6 +15,19 @@ export default defineConfig({
     react()
   ],
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+    build: {
+      cssCodeSplit: true,
+      minify: 'esbuild'
+    }
+  },
+  prefetch: {
+    prefetchAll: false,
+    defaultStrategy: 'viewport'
+  },
+  image: {
+    domains: ['images.unsplash.com', 'picsum.photos'],
+    remotePatterns: [{ protocol: 'https' }]
+  },
+  compressHTML: true
 });
