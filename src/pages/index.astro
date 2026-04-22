@@ -6,7 +6,7 @@ import Benefits from '../components/sections/Benefits.astro';
 import Testimonials from '../components/sections/Testimonials.astro';
 import Pricing from '../components/sections/Pricing.astro';
 import Footer from '../components/sections/Footer.astro';
-import CalEmbed from '../components/islands/CalEmbed.tsx';
+import CalIframe from '../components/sections/CalIframe.astro';
 import Card from '../components/ui/Card.astro';
 ---
 
@@ -28,7 +28,7 @@ import Card from '../components/ui/Card.astro';
         </p>
 
         <Card variant='glass' padding='lg' class='max-w-4xl mx-auto'>
-          <CalEmbed calLink='patriciataques/leitura-de-tarot' calNamespace='tarot-booking' client:visible />
+          <CalIframe calLink='patriciataques/leitura-de-tarot' />
         </Card>
       </div>
     </section>
