@@ -1,72 +1,44 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface CalEmbedProps {
   calLink?: string;
-  calNamespace?: string;
 }
 
-export default function CalEmbed({
-  calLink = 'patriciataques/30min',
-  calNamespace = 'tarot-booking'
-}: CalEmbedProps) {
+export default function CalEmbed({ calLink = 'patriciataques/leitura-de-tarot' }: CalEmbedProps) {
+  const initialized = useRef(false);
+
   useEffect(() => {
-    const existingScript = document.querySelector('script[src*=\"embed.cal.com\"]');
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.src = 'https://embed.cal.com/embed.js';
-      script.async = true;
-      document.body.appendChild(script);
-    }
+    if (initialized.current) return;
+    initialized.current = true;
 
-    const initCal = () => {
-      if ((window as any).Cal) {
-        (window as any).Cal.ns[calNamespace]?.();
-        (window as any).Cal.init({
-          origin: 'https://cal.com'
-        });
-
-        (window as any).Cal.ns[calNamespace]?.('ui', {
-          styles: {
-            body: {
-              background: '#18181B'
-            }
-          },
-          config: {
-            layout: 'month_view',
-            theme: 'dark'
-          }
-        });
+    const loadCal = () => {
+      const win = window as any;
+      if (win.Cal) {
+        win.Cal.init({ origin: 'https://cal.com' });
       }
     };
 
-    if ((window as any).Cal) {
-      initCal();
+    const win = window as any;
+    if (win.Cal) {
+      loadCal();
     } else {
-      script.addEventListener('load', initCal);
+      const s = document.createElement('script');
+      s.src = 'https://embed.cal.com/embed.js';
+      s.async = true;
+      s.onload = loadCal;
+      s.onerror = () => console.error('Failed to load Cal.com embed');
+      document.body.appendChild(s);
     }
-
-    return () => {
-      // Cleanup not needed for script loading
-    };
-  }, [calNamespace]);
+  }, []);
 
   return (
-    <div className='cal-embed-wrapper'>
-      <div
-        data-cal-link={calLink}
-        data-cal-namespace={calNamespace}
-        data-cal-config='{
-          \"theme\": \"dark\",
-          \"styles\": {
-            \"background\": \"#18181B\",
-            \"primaryColor\": \"#D4A12C\"
-          },
-          \"layout\": \"month_view\"
-        }'
-        style={{ minHeight: '650px', width: '100%' }}
-      />
-    </div>
+    <div
+      data-cal-link={calLink}
+      data-cal-namespace='tarot-booking'
+      data-cal-config='{&quot;theme&quot;:&quot;dark&quot;,&quot;layout&quot;:&quot;month_view&quot;}'
+      style={{ minHeight: '600px', width: '100%' }}
+    />
   );
 }
