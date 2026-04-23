@@ -22,9 +22,9 @@ Muted:        #A1A1AA
 ```
 
 ### Typography
-- **Display**: Cormorant Garamond (títulos grandes)
+- **Display**: Cinzel (títulos grandes, serifada, uppercase)
 - **Heading**: Playfair Display (subtítulos)
-- **Body**: Inter (texto corrido)
+- **Body**: Outfit (texto corrido, sans-serif)
 
 ### Spatial System
 - Container narrow: 640px
@@ -130,6 +130,12 @@ Muted:        #A1A1AA
 - **Sizes**: sm, md, lg, xl
 - **States**: default, hover, active, disabled, focus
 
+### WhatsAppButton
+- **Sizes**: sm, md, lg
+- **Style**: rounded-full, green (#25D366), glow shadow
+- **States**: default, hover (scale + brighter glow), disabled
+- **Props**: message (pre-filled WhatsApp text)
+
 ### Card
 - **Variants**: default, gold, glass, hover
 - **Padding**: none, sm, md, lg
@@ -139,31 +145,48 @@ Muted:        #A1A1AA
 - **Variants**: default, secondary, outline, success, warning, destructive
 - **States**: default only (inline element)
 
+### LeadForm (React Island)
+- **Validation**: Zod schema (name, email, phone, country, message)
+- **States**: idle, submitting, success
+- **WhatsApp Button**: disabled until form valid
+- **Sanitization**: trim, toLowerCase, regex
+
+### PaymentForm (React Island)
+- **Package Selection**: Brazil (R$260) or Europe (€150)
+- **Fields**: name, email, NIF (Portugal required)
+- **Stripe Checkout**: redirects to Stripe hosted page
+
 ## 6. Technical Approach
 
 ### Framework
 - Astro 6.x
-- Output: hybrid (static + SSR for API)
-- Adapter: Cloudflare Pages
+- Output: server (SSR)
+- Adapter: Cloudflare Workers
 
 ### Styling
-- Tailwind CSS v3 (via @astrojs/tailwind)
-- CSS custom properties for design tokens
-- No class-variance-authority (pure CSS variants)
+- Tailwind CSS v4 (CSS-first, @tailwindcss/vite)
+- CSS custom properties for design tokens (tokens.css)
+- Animation utilities (animations.css)
+- Font families: Cinzel, Outfit, Playfair Display
 
 ### Integrations
 - Cal.com embed (React island)
-- WhatsApp direct links
+- WhatsApp direct links (custom WhatsAppButton component)
+- Stripe checkout (API route + PaymentForm island)
 - Instagram profile link
 
-### API Routes (Future)
-- `/api/create-checkout-session` - Stripe checkout
-- `/api/stripe-webhook` - Payment confirmation
+### API Routes
+- `/api/create-checkout-session` - Stripe checkout session creation
+- NIF validation for Portugal clients
+
+### React Islands
+- `CalEmbed.tsx` - Cal.com scheduling widget
+- `LeadForm.tsx` - Contact form with validation
+- `PaymentForm.tsx` - Package selection + Stripe checkout
 
 ### Testing
 - Vitest for unit tests
 - Playwright for E2E tests
-- Container API for Astro components
 
 ## 7. Content
 
@@ -221,7 +244,12 @@ npm test
 - [x] CI/CD Pipeline
 - [x] Unit Tests
 - [x] Custom Domain Configuration
-- [ ] Stripe Payment Integration (future)
+- [x] Stripe Payment Integration (Phase 3)
+- [x] LeadForm with validation (Phase 2)
+- [x] WhatsAppButton component (green, rounded)
+- [x] Design System (tokens, animations)
+- [x] Scroll reveal animations
+- [x] Sitemap + robots.txt
 - [ ] E2E Tests with Playwright
 - [ ] Analytics (Plausible)
 - [ ] Error Monitoring (Sentry)
