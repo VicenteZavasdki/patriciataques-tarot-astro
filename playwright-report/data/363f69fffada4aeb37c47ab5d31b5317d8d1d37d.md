@@ -6,23 +6,23 @@
 
 # Test info
 
-- Name: pages/index.spec.ts >> Landing Page >> trust metrics are displayed
-- Location: tests/e2e/pages/index.spec.ts:18:3
+- Name: pages/index.spec.ts >> Contact Form (LeadForm) >> form fields are present
+- Location: tests/e2e/pages/index.spec.ts:82:3
 
 # Error details
 
 ```
 Error: expect(locator).toBeVisible() failed
 
-Locator: locator('text=Anos')
+Locator: locator('select')
 Expected: visible
-Error: strict mode violation: locator('text=Anos') resolved to 2 elements:
-    1) <span class="text-foreground">Arcanos</span> aka getByText('Arcanos')
-    2) <div class="text-sm uppercase tracking-wider mt-1">Anos</div> aka getByText('Anos', { exact: true })
+Error: strict mode violation: locator('select') resolved to 2 elements:
+    1) <select name="country" id="lead-country" aria-invalid="false" aria-required="true" class="w-full px-4 py-3 bg-background-card border-2 rounded-lg text-foreground transition-all focus:outline-none border-border focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20">…</select> aka getByLabel('País *')
+    2) <select name="dev-toolbar-select">…</select> aka locator('select[name="dev-toolbar-select"]')
 
 Call log:
   - Expect "toBeVisible" with timeout 5000ms
-  - waiting for locator('text=Anos')
+  - waiting for locator('select')
 
 ```
 
@@ -322,8 +322,7 @@ Call log:
   17  | 
   18  |   test('trust metrics are displayed', async ({ page }) => {
   19  |     await expect(page.locator('text=+300')).toBeVisible();
-> 20  |     await expect(page.locator('text=Anos')).toBeVisible();
-      |                                             ^ Error: expect(locator).toBeVisible() failed
+  20  |     await expect(page.locator('text=Anos')).toBeVisible();
   21  |   });
   22  | 
   23  |   test('process section has 3 steps', async ({ page }) => {
@@ -389,7 +388,8 @@ Call log:
   83  |     await expect(page.locator('input[placeholder*=\"nome\"]')).toBeVisible();
   84  |     await expect(page.locator('input[type=\"email\"]')).toBeVisible();
   85  |     await expect(page.locator('input[type=\"tel\"]')).toBeVisible();
-  86  |     await expect(page.locator('select')).toBeVisible();
+> 86  |     await expect(page.locator('select')).toBeVisible();
+      |                                          ^ Error: expect(locator).toBeVisible() failed
   87  |   });
   88  | 
   89  |   test('whatsapp button disabled initially', async ({ page }) => {
@@ -424,4 +424,70 @@ Call log:
   118 |   });
   119 | });
   120 | 
+  121 | test.describe('Pricing Section', () => {
+  122 |   test.beforeEach(async ({ page }) => {
+  123 |     await page.goto('/');
+  124 |     await page.locator('#pricing').scrollIntoViewIfNeeded();
+  125 |   });
+  126 | 
+  127 |   test('shows Brazil pricing card', async ({ page }) => {
+  128 |     await expect(page.locator('text=Leitura Brasil')).toBeVisible();
+  129 |     await expect(page.locator('text=R$')).toBeVisible();
+  130 |     await expect(page.locator('text=Agendar no WhatsApp').first()).toBeVisible();
+  131 |   });
+  132 | 
+  133 |   test('shows Europe pricing card', async ({ page }) => {
+  134 |     await expect(page.locator('text=Leitura Europa')).toBeVisible();
+  135 |     await expect(page.locator('text=€')).toBeVisible();
+  136 |     await expect(page.locator('text=Book via WhatsApp').first()).toBeVisible();
+  137 |   });
+  138 | 
+  139 |   test('Brazil WhatsApp button has correct message', async ({ page }) => {
+  140 |     const brazilBtn = page.locator('text=Agendar no WhatsApp').first();
+  141 |     const href = await brazilBtn.getAttribute('href');
+  142 |     expect(href).toContain('wa.me');
+  143 |     expect(href).toContain('agendar');
+  144 |   });
+  145 | 
+  146 |   test('link to payment section exists', async ({ page }) => {
+  147 |     const payWithCardLink = page.locator('text=Ou pagar com cartão');
+  148 |     await expect(payWithCardLink.first()).toBeVisible();
+  149 |   });
+  150 | });
+  151 | 
+  152 | test.describe('Payment Section', () => {
+  153 |   test.beforeEach(async ({ page }) => {
+  154 |     await page.goto('/#payment');
+  155 |     await page.waitForSelector('#payment', { state: 'visible' });
+  156 |   });
+  157 | 
+  158 |   test('package selection is visible', async ({ page }) => {
+  159 |     await expect(page.locator('text=R$ 260,00')).toBeVisible();
+  160 |     await expect(page.locator('text=€ 150,00')).toBeVisible();
+  161 |   });
+  162 | 
+  163 |   test('can select Brazil package', async ({ page }) => {
+  164 |     await page.locator('text=R$ 260,00').click();
+  165 |     await expect(page.locator('text=Dados para Pagamento')).toBeVisible();
+  166 |     await expect(page.locator('text=NIF')).not.toBeVisible();
+  167 |   });
+  168 | 
+  169 |   test('can select Europe package - NIF required', async ({ page }) => {
+  170 |     await page.locator('text=€ 150,00').click();
+  171 |     await expect(page.locator('text=Dados para Pagamento')).toBeVisible();
+  172 |     await expect(page.locator('text=NIF')).toBeVisible();
+  173 |   });
+  174 | });
+  175 | 
+  176 | test.describe('Navigation', () => {
+  177 |   test('scroll to different sections', async ({ page }) => {
+  178 |     await page.goto('/');
+  179 |     await expect(page.locator('h1')).toBeVisible();
+  180 | 
+  181 |     await page.locator('#pricing').scrollIntoViewIfNeeded();
+  182 |     await expect(page.locator('text=Investimento')).toBeVisible();
+  183 | 
+  184 |     await page.locator('#agendar').scrollIntoViewIfNeeded();
+  185 |     await expect(page.locator('text=Agende sua Leitura')).toBeVisible();
+  186 |   });
 ```

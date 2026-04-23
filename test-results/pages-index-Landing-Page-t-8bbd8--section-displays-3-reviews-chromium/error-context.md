@@ -6,23 +6,22 @@
 
 # Test info
 
-- Name: pages/index.spec.ts >> Landing Page >> trust metrics are displayed
-- Location: tests/e2e/pages/index.spec.ts:18:3
+- Name: pages/index.spec.ts >> Landing Page >> testimonials section displays 3 reviews
+- Location: tests/e2e/pages/index.spec.ts:36:3
 
 # Error details
 
 ```
 Error: expect(locator).toBeVisible() failed
 
-Locator: locator('text=Anos')
+Locator: locator('text=Depoimentos')
 Expected: visible
-Error: strict mode violation: locator('text=Anos') resolved to 2 elements:
-    1) <span class="text-foreground">Arcanos</span> aka getByText('Arcanos')
-    2) <div class="text-sm uppercase tracking-wider mt-1">Anos</div> aka getByText('Anos', { exact: true })
+Timeout: 5000ms
+Error: element(s) not found
 
 Call log:
   - Expect "toBeVisible" with timeout 5000ms
-  - waiting for locator('text=Anos')
+  - waiting for locator('text=Depoimentos')
 
 ```
 
@@ -322,8 +321,7 @@ Call log:
   17  | 
   18  |   test('trust metrics are displayed', async ({ page }) => {
   19  |     await expect(page.locator('text=+300')).toBeVisible();
-> 20  |     await expect(page.locator('text=Anos')).toBeVisible();
-      |                                             ^ Error: expect(locator).toBeVisible() failed
+  20  |     await expect(page.locator('text=Anos')).toBeVisible();
   21  |   });
   22  | 
   23  |   test('process section has 3 steps', async ({ page }) => {
@@ -340,7 +338,8 @@ Call log:
   34  |   });
   35  | 
   36  |   test('testimonials section displays 3 reviews', async ({ page }) => {
-  37  |     await expect(page.locator('text=Depoimentos')).toBeVisible();
+> 37  |     await expect(page.locator('text=Depoimentos')).toBeVisible();
+      |                                                    ^ Error: expect(locator).toBeVisible() failed
   38  |     const stars = page.locator('text=★★★★★').first();
   39  |     await expect(stars).toBeVisible();
   40  |   });
@@ -424,4 +423,21 @@ Call log:
   118 |   });
   119 | });
   120 | 
+  121 | test.describe('Pricing Section', () => {
+  122 |   test.beforeEach(async ({ page }) => {
+  123 |     await page.goto('/');
+  124 |     await page.locator('#pricing').scrollIntoViewIfNeeded();
+  125 |   });
+  126 | 
+  127 |   test('shows Brazil pricing card', async ({ page }) => {
+  128 |     await expect(page.locator('text=Leitura Brasil')).toBeVisible();
+  129 |     await expect(page.locator('text=R$')).toBeVisible();
+  130 |     await expect(page.locator('text=Agendar no WhatsApp').first()).toBeVisible();
+  131 |   });
+  132 | 
+  133 |   test('shows Europe pricing card', async ({ page }) => {
+  134 |     await expect(page.locator('text=Leitura Europa')).toBeVisible();
+  135 |     await expect(page.locator('text=€')).toBeVisible();
+  136 |     await expect(page.locator('text=Book via WhatsApp').first()).toBeVisible();
+  137 |   });
 ```

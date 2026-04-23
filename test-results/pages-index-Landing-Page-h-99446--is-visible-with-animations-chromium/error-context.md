@@ -6,23 +6,25 @@
 
 # Test info
 
-- Name: pages/index.spec.ts >> Landing Page >> trust metrics are displayed
-- Location: tests/e2e/pages/index.spec.ts:18:3
+- Name: pages/index.spec.ts >> Landing Page >> hero section is visible with animations
+- Location: tests/e2e/pages/index.spec.ts:12:3
 
 # Error details
 
 ```
 Error: expect(locator).toBeVisible() failed
 
-Locator: locator('text=Anos')
+Locator: locator('h1')
 Expected: visible
-Error: strict mode violation: locator('text=Anos') resolved to 2 elements:
-    1) <span class="text-foreground">Arcanos</span> aka getByText('Arcanos')
-    2) <div class="text-sm uppercase tracking-wider mt-1">Anos</div> aka getByText('Anos', { exact: true })
+Error: strict mode violation: locator('h1') resolved to 4 elements:
+    1) <h1 class="animate-fade-in-up font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-wide uppercase">…</h1> aka getByRole('heading', { name: 'Descubra seu Caminho através' })
+    2) <h1>Audit</h1> aka locator('#header-left').getByText('Audit')
+    3) <h1>No accessibility or performance issues detected.</h1> aka getByText('No accessibility or')
+    4) <h1>…</h1> aka locator('h1').filter({ hasText: 'Settings' })
 
 Call log:
   - Expect "toBeVisible" with timeout 5000ms
-  - waiting for locator('text=Anos')
+  - waiting for locator('h1')
 
 ```
 
@@ -315,15 +317,15 @@ Call log:
   10  |   });
   11  | 
   12  |   test('hero section is visible with animations', async ({ page }) => {
-  13  |     await expect(page.locator('h1')).toBeVisible();
+> 13  |     await expect(page.locator('h1')).toBeVisible();
+      |                                      ^ Error: expect(locator).toBeVisible() failed
   14  |     await expect(page.locator('h1')).toContainText('Descubra');
   15  |     await expect(page.locator('text=Caminho')).toBeVisible();
   16  |   });
   17  | 
   18  |   test('trust metrics are displayed', async ({ page }) => {
   19  |     await expect(page.locator('text=+300')).toBeVisible();
-> 20  |     await expect(page.locator('text=Anos')).toBeVisible();
-      |                                             ^ Error: expect(locator).toBeVisible() failed
+  20  |     await expect(page.locator('text=Anos')).toBeVisible();
   21  |   });
   22  | 
   23  |   test('process section has 3 steps', async ({ page }) => {
@@ -417,11 +419,4 @@ Call log:
   111 |     await page.locator('input[type=\"email\"]').fill('maria@email.com');
   112 |     await page.locator('input[type=\"tel\"]').fill('+55 11 99999-9999');
   113 |     await page.locator('select').selectOption('BR');
-  114 | 
-  115 |     const submitBtn = page.locator('button[type=\"submit\"]');
-  116 |     await expect(submitBtn).toBeEnabled();
-  117 |     await expect(submitBtn).toContainText('Enviar via WhatsApp');
-  118 |   });
-  119 | });
-  120 | 
 ```

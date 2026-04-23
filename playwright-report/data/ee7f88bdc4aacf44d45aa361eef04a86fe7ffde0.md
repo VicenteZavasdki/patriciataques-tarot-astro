@@ -52,251 +52,247 @@ Call log:
         - generic [ref=e23]:
           - generic [ref=e24]: 2+
           - generic [ref=e25]: Anos
-        - generic [ref=e27]:
-          - generic [ref=e28]: 5⭐
-          - generic [ref=e29]: Avaliação
-      - link "Descubra mais" [ref=e31] [cursor=pointer]:
+      - link "Descubra mais" [ref=e27] [cursor=pointer]:
         - /url: "#agendar"
-        - generic [ref=e32]: Descubra mais
-        - img [ref=e33]
-    - generic [ref=e37]:
-      - heading "Como Funciona" [level=2] [ref=e38]
-      - paragraph [ref=e39]: Três passos simples para iniciar sua jornada de autoconhecimento.
-      - generic [ref=e40]:
-        - generic [ref=e41]:
-          - generic [ref=e42]: "1"
-          - generic [ref=e43]:
-            - heading "Entre em Contato" [level=3] [ref=e44]
-            - paragraph [ref=e45]: Use o WhatsApp para iniciar sua jornada espiritual.
-          - img [ref=e47]
-        - generic [ref=e49]:
-          - generic [ref=e50]: "2"
-          - generic [ref=e51]:
-            - heading "Escolha seu Tipo" [level=3] [ref=e52]
-            - paragraph [ref=e53]: "Selecione a leitura ideal para você: presencial ou por áudio/video."
-          - img [ref=e55]
+        - generic [ref=e28]: Descubra mais
+        - img [ref=e29]
+    - generic [ref=e33]:
+      - heading "Como Funciona" [level=2] [ref=e34]
+      - paragraph [ref=e35]: Três passos simples para iniciar sua jornada de autoconhecimento.
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - generic [ref=e38]: "1"
+          - generic [ref=e39]:
+            - heading "Entre em Contato" [level=3] [ref=e40]
+            - paragraph [ref=e41]: Use o WhatsApp para iniciar sua jornada espiritual.
+        - generic [ref=e42]:
+          - generic [ref=e43]: "2"
+          - generic [ref=e44]:
+            - heading "Escolha seu Tipo" [level=3] [ref=e45]
+            - paragraph [ref=e46]: "Selecione a leitura ideal para você: presencial ou por áudio/video."
+        - generic [ref=e47]:
+          - generic [ref=e48]: "3"
+          - generic [ref=e49]:
+            - heading "Receba sua Leitura" [level=3] [ref=e50]
+            - paragraph [ref=e51]: Mergulhe nas revelações dos cards e transforme sua perspectiva.
+    - generic [ref=e53]:
+      - heading "O que Inclui" [level=2] [ref=e54]
+      - paragraph [ref=e55]: Cada leitura é uma experiência única, pensada para guiar sua jornada espiritual.
+      - generic [ref=e56]:
         - generic [ref=e57]:
-          - generic [ref=e58]: "3"
-          - generic [ref=e59]:
-            - heading "Receba sua Leitura" [level=3] [ref=e60]
-            - paragraph [ref=e61]: Mergulhe nas revelações dos cards e transforme sua perspectiva.
-    - generic [ref=e63]:
-      - heading "O que Inclui" [level=2] [ref=e64]
-      - paragraph [ref=e65]: Cada leitura é uma experiência única, pensada para guiar sua jornada espiritual.
-      - generic [ref=e66]:
-        - generic [ref=e67]:
-          - generic [ref=e68]: 📸
-          - heading "Fotos" [level=3] [ref=e69]
-          - paragraph [ref=e70]: Envio de fotos detalhadas das cartas tiradas durante sua sessão
-        - generic [ref=e71]:
-          - generic [ref=e72]: 🎧
-          - heading "Áudio" [level=3] [ref=e73]
-          - paragraph [ref=e74]: Gravação em áudio de toda a leitura para você ouvir depois
-        - generic [ref=e75]:
-          - generic [ref=e76]: 🧭
-          - heading "Orientação" [level=3] [ref=e77]
-          - paragraph [ref=e78]: Direcionamento claro e inspirações práticas para sua jornada
-        - generic [ref=e79]:
-          - generic [ref=e80]: 📦
-          - heading "Entrega" [level=3] [ref=e81]
-          - paragraph [ref=e82]: Material completo escrito com análise detalhada pós-sessão
-    - generic [ref=e84]:
-      - heading "O que dizem sobre Patricia" [level=2] [ref=e85]
-      - paragraph [ref=e86]: Histórias reais de quem transformou sua perspectiva com os cards.
-      - generic [ref=e87]:
-        - generic [ref=e88]:
-          - generic [ref=e89]:
-            - generic [ref=e90]: ★
-            - generic [ref=e91]: ★
+          - generic [ref=e58]: 📸
+          - heading "Fotos" [level=3] [ref=e59]
+          - paragraph [ref=e60]: Envio de fotos detalhadas das cartas tiradas durante sua sessão
+        - generic [ref=e61]:
+          - generic [ref=e62]: 🎧
+          - heading "Áudio" [level=3] [ref=e63]
+          - paragraph [ref=e64]: Gravação em áudio de toda a leitura para você ouvir depois
+        - generic [ref=e65]:
+          - generic [ref=e66]: 🧭
+          - heading "Orientação" [level=3] [ref=e67]
+          - paragraph [ref=e68]: Direcionamento claro e inspirações práticas para sua jornada
+        - generic [ref=e69]:
+          - generic [ref=e70]: 📦
+          - heading "Entrega" [level=3] [ref=e71]
+          - paragraph [ref=e72]: Material completo escrito com análise detalhada pós-sessão
+    - generic [ref=e74]:
+      - heading "O que dizem sobre Patricia" [level=2] [ref=e75]
+      - paragraph [ref=e76]: Histórias reais de quem transformou sua perspectiva com os cards.
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - generic [ref=e79]:
+            - generic [ref=e80]: ★
+            - generic [ref=e81]: ★
+            - generic [ref=e82]: ★
+            - generic [ref=e83]: ★
+            - generic [ref=e84]: ★
+          - blockquote [ref=e85]: “Patricia me ajudou a enxergar claridad sobre uma decisão importante. Sua leitura foi precisa e tocou exatamente o que eu precisava ouvir.”
+          - generic [ref=e86]:
+            - generic [ref=e87]: Marina S.
+            - generic [ref=e88]: São Paulo, Brasil
+            - generic [ref=e89]: ✓ Clareza para decisão de carreira
+        - generic [ref=e90]:
+          - generic [ref=e91]:
             - generic [ref=e92]: ★
             - generic [ref=e93]: ★
             - generic [ref=e94]: ★
-          - blockquote [ref=e95]: “Patricia me ajudou a enxergar claridad sobre uma decisão importante. Sua leitura foi precisa e tocou exatamente o que eu precisava ouvir.”
-          - generic [ref=e96]:
-            - generic [ref=e97]: Marina S.
-            - generic [ref=e98]: São Paulo, Brasil
-            - generic [ref=e99]: ✓ Clareza para decisão de carreira
-        - generic [ref=e100]:
-          - generic [ref=e101]:
-            - generic [ref=e102]: ★
-            - generic [ref=e103]: ★
+            - generic [ref=e95]: ★
+            - generic [ref=e96]: ★
+          - blockquote [ref=e97]: “Incrível como ela captura a energia das cartas. Senti que estava sendo ouvida e orientada por alguém que realmente se importa.”
+          - generic [ref=e98]:
+            - generic [ref=e99]: Isabella M.
+            - generic [ref=e100]: Lisboa, Portugal
+            - generic [ref=e101]: ✓ Paz interior e direcionamento
+        - generic [ref=e102]:
+          - generic [ref=e103]:
             - generic [ref=e104]: ★
             - generic [ref=e105]: ★
             - generic [ref=e106]: ★
-          - blockquote [ref=e107]: “Incrível como ela captura a energia das cartas. Senti que estava sendo ouvida e orientada por alguém que realmente se importa.”
-          - generic [ref=e108]:
-            - generic [ref=e109]: Isabella M.
-            - generic [ref=e110]: Lisboa, Portugal
-            - generic [ref=e111]: ✓ Paz interior e direcionamento
-        - generic [ref=e112]:
-          - generic [ref=e113]:
-            - generic [ref=e114]: ★
-            - generic [ref=e115]: ★
-            - generic [ref=e116]: ★
-            - generic [ref=e117]: ★
-            - generic [ref=e118]: ★
-          - blockquote [ref=e119]: “As fotos e o áudio da sessão foram essenciais. Volto a ouvir sempre que preciso de reflexão. Profissa e dedicada!”
-          - generic [ref=e120]:
-            - generic [ref=e121]: Carlos R.
-            - generic [ref=e122]: Berlim, Alemanha
-            - generic [ref=e123]: ✓ Decisão sobre mudança de país
-    - generic [ref=e125]:
-      - heading "Investimento na sua Jornada" [level=2] [ref=e126]
-      - paragraph [ref=e127]: Escolha a opção que se encaixa melhor na sua realidade.
-      - generic [ref=e128]:
-        - generic [ref=e129]:
-          - generic [ref=e130]: Brasil
-          - generic [ref=e131]: Leitura completa para
-          - generic [ref=e132]: R$ 260,00
-          - list [ref=e133]:
-            - listitem [ref=e134]:
-              - generic [ref=e135]: ✓
+            - generic [ref=e107]: ★
+            - generic [ref=e108]: ★
+          - blockquote [ref=e109]: “As fotos e o áudio da sessão foram essenciais. Volto a ouvir sempre que preciso de reflexão. Profissa e dedicada!”
+          - generic [ref=e110]:
+            - generic [ref=e111]: Carlos R.
+            - generic [ref=e112]: Berlim, Alemanha
+            - generic [ref=e113]: ✓ Decisão sobre mudança de país
+    - generic [ref=e115]:
+      - heading "Investimento na sua Jornada" [level=2] [ref=e116]
+      - paragraph [ref=e117]: Escolha a opção que se encaixa melhor na sua realidade.
+      - generic [ref=e118]:
+        - generic [ref=e119]:
+          - generic [ref=e120]: Brasil
+          - generic [ref=e121]: Leitura completa para
+          - generic [ref=e122]: R$ 260,00
+          - list [ref=e123]:
+            - listitem [ref=e124]:
+              - generic [ref=e125]: ✓
               - text: Sessão via áudio ou video
-            - listitem [ref=e136]:
-              - generic [ref=e137]: ✓
+            - listitem [ref=e126]:
+              - generic [ref=e127]: ✓
               - text: Fotos das cartas tiradas
-            - listitem [ref=e138]:
-              - generic [ref=e139]: ✓
+            - listitem [ref=e128]:
+              - generic [ref=e129]: ✓
               - text: Gravação em áudio
-            - listitem [ref=e140]:
-              - generic [ref=e141]: ✓
+            - listitem [ref=e130]:
+              - generic [ref=e131]: ✓
               - text: Análise escrita detalhada
-            - listitem [ref=e142]:
-              - generic [ref=e143]: ✓
+            - listitem [ref=e132]:
+              - generic [ref=e133]: ✓
               - text: Suporte via WhatsApp
-          - link "Agendar no WhatsApp" [ref=e144] [cursor=pointer]:
+          - link "Agendar no WhatsApp" [ref=e134] [cursor=pointer]:
             - /url: https://wa.me/351935917861?text=Ol%C3%A1%20Patricia!%20Gostaria%20de%20agendar%20uma%20leitura%20de%20tarot%20para%20o%20Brasil.
-            - img [ref=e145]
+            - img [ref=e135]
             - text: Agendar no WhatsApp
-          - link "Ou pagar com cartão →" [ref=e147] [cursor=pointer]:
+          - link "Ou pagar com cartão →" [ref=e137] [cursor=pointer]:
             - /url: "#payment"
-        - generic [ref=e148]:
-          - generic [ref=e149]: Europa/Global
-          - generic [ref=e150]: Complete reading for
-          - generic [ref=e151]: 150,00 €
-          - list [ref=e152]:
-            - listitem [ref=e153]:
-              - generic [ref=e154]: ✓
+        - generic [ref=e138]:
+          - generic [ref=e139]: Europa/Global
+          - generic [ref=e140]: Complete reading for
+          - generic [ref=e141]: 150,00 €
+          - list [ref=e142]:
+            - listitem [ref=e143]:
+              - generic [ref=e144]: ✓
               - text: Session via audio or video
-            - listitem [ref=e155]:
-              - generic [ref=e156]: ✓
+            - listitem [ref=e145]:
+              - generic [ref=e146]: ✓
               - text: Photos of cards taken
-            - listitem [ref=e157]:
-              - generic [ref=e158]: ✓
+            - listitem [ref=e147]:
+              - generic [ref=e148]: ✓
               - text: Audio recording
-            - listitem [ref=e159]:
-              - generic [ref=e160]: ✓
+            - listitem [ref=e149]:
+              - generic [ref=e150]: ✓
               - text: Detailed written analysis
-            - listitem [ref=e161]:
-              - generic [ref=e162]: ✓
+            - listitem [ref=e151]:
+              - generic [ref=e152]: ✓
               - text: WhatsApp support
-          - link "Book via WhatsApp" [ref=e163] [cursor=pointer]:
+          - link "Book via WhatsApp" [ref=e153] [cursor=pointer]:
             - /url: https://wa.me/351935917861?text=Hello%20Patricia!%20I%20would%20like%20to%20book%20a%20tarot%20reading%20session%20from%20Europe.
-            - img [ref=e164]
+            - img [ref=e154]
             - text: Book via WhatsApp
-          - link "Or pay with card →" [ref=e166] [cursor=pointer]:
+          - link "Or pay with card →" [ref=e156] [cursor=pointer]:
             - /url: "#payment"
-      - paragraph [ref=e167]: Pagamento via transferência bancária, PIX ou link de pagamento.
-    - generic [ref=e169]:
-      - heading "Pagamento Seguro" [level=2] [ref=e170]
-      - paragraph [ref=e171]: Reserve sua sessão com pagamento seguro via Stripe. Aceitamos cartões de crédito e débito.
-      - generic [ref=e174]:
-        - group "Selecione um pacote de leitura" [ref=e175]:
-          - generic [ref=e176]: Selecione um pacote de leitura
-          - generic [ref=e177]:
-            - radio "R$ 260,00 Leitura Brasil Sessão completa + fotos + áudio + análise escrita" [ref=e178]:
-              - generic [ref=e179]: R$ 260,00
-              - generic [ref=e180]: Leitura Brasil
-              - generic [ref=e181]: Sessão completa + fotos + áudio + análise escrita
-            - radio "€ 150,00 Leitura Europa Complete session + photos + audio + written analysis" [ref=e182]:
-              - generic [ref=e183]: € 150,00
-              - generic [ref=e184]: Leitura Europa
-              - generic [ref=e185]: Complete session + photos + audio + written analysis
-        - generic [ref=e186]:
-          - paragraph [ref=e187]: Prefere pagar via transferência?
-          - link "Entre em contato para outras formas de pagamento" [ref=e188] [cursor=pointer]:
+      - paragraph [ref=e157]: Pagamento via transferência bancária, PIX ou link de pagamento.
+    - generic [ref=e159]:
+      - heading "Pagamento Seguro" [level=2] [ref=e160]
+      - paragraph [ref=e161]: Reserve sua sessão com pagamento seguro via Stripe. Aceitamos cartões de crédito e débito.
+      - generic [ref=e164]:
+        - group "Selecione um pacote de leitura" [ref=e165]:
+          - generic [ref=e166]: Selecione um pacote de leitura
+          - generic [ref=e167]:
+            - radio "R$ 260,00 Leitura Brasil Sessão completa + fotos + áudio + análise escrita" [ref=e168]:
+              - generic [ref=e169]: R$ 260,00
+              - generic [ref=e170]: Leitura Brasil
+              - generic [ref=e171]: Sessão completa + fotos + áudio + análise escrita
+            - radio "€ 150,00 Leitura Europa Complete session + photos + audio + written analysis" [ref=e172]:
+              - generic [ref=e173]: € 150,00
+              - generic [ref=e174]: Leitura Europa
+              - generic [ref=e175]: Complete session + photos + audio + written analysis
+        - generic [ref=e176]:
+          - paragraph [ref=e177]: Prefere pagar via transferência?
+          - link "Entre em contato para outras formas de pagamento" [ref=e178] [cursor=pointer]:
             - /url: "#contato"
-      - generic [ref=e189]:
-        - generic [ref=e190]:
-          - img [ref=e191]
-          - generic [ref=e193]: SSL Seguro
-        - generic [ref=e194]:
-          - img [ref=e195]
-          - generic [ref=e197]: Stripe Protegido
-        - generic [ref=e198]:
-          - img [ref=e199]
-          - generic [ref=e201]: Cartões aceitos
-    - generic [ref=e203]:
-      - heading "Entre em Contato" [level=2] [ref=e204]
-      - paragraph [ref=e205]: Preencha o formulário abaixo e sua mensagem será aberta diretamente no WhatsApp.
-      - generic [ref=e206]:
-        - form "Formulário de contato" [ref=e209]:
-          - generic [ref=e210]:
-            - generic [ref=e211]: Nome *
-            - textbox "Nome *" [ref=e212]:
+      - generic [ref=e179]:
+        - generic [ref=e180]:
+          - img [ref=e181]
+          - generic [ref=e183]: SSL Seguro
+        - generic [ref=e184]:
+          - img [ref=e185]
+          - generic [ref=e187]: Stripe Protegido
+        - generic [ref=e188]:
+          - img [ref=e189]
+          - generic [ref=e191]: Cartões aceitos
+    - generic [ref=e193]:
+      - heading "Entre em Contato" [level=2] [ref=e194]
+      - paragraph [ref=e195]: Preencha o formulário abaixo e sua mensagem será aberta diretamente no WhatsApp.
+      - generic [ref=e196]:
+        - form "Formulário de contato" [ref=e199]:
+          - generic [ref=e200]:
+            - generic [ref=e201]: Nome *
+            - textbox "Nome *" [ref=e202]:
               - /placeholder: Seu nome completo
-          - generic [ref=e213]:
-            - generic [ref=e214]: Email *
-            - textbox "Email *" [ref=e215]:
+          - generic [ref=e203]:
+            - generic [ref=e204]: Email *
+            - textbox "Email *" [ref=e205]:
               - /placeholder: seu@email.com
-          - generic [ref=e216]:
-            - generic [ref=e217]: Telefone/WhatsApp *
-            - textbox "Telefone/WhatsApp *" [ref=e218]:
+          - generic [ref=e206]:
+            - generic [ref=e207]: Telefone/WhatsApp *
+            - textbox "Telefone/WhatsApp *" [ref=e208]:
               - /placeholder: +55 11 99999-9999
-          - generic [ref=e219]:
-            - generic [ref=e220]: País *
-            - combobox "País *" [ref=e221]:
+          - generic [ref=e209]:
+            - generic [ref=e210]: País *
+            - combobox "País *" [ref=e211]:
               - option "Selecione seu país" [selected]
               - option "Brasil 🇧🇷"
               - option "Portugal 🇵🇹"
               - option "Espanha 🇪🇸"
               - option "Outro"
-          - generic [ref=e222]:
-            - generic [ref=e223]: Mensagem (opcional)
-            - textbox "Mensagem (opcional)" [ref=e224]:
+          - generic [ref=e212]:
+            - generic [ref=e213]: Mensagem (opcional)
+            - textbox "Mensagem (opcional)" [ref=e214]:
               - /placeholder: Como posso te ajudar? Qual tema te interessa?
-          - button "Preencha todos os campos" [disabled] [ref=e225]:
-            - img [ref=e226]
+          - button "Preencha todos os campos" [disabled] [ref=e215]:
+            - img [ref=e216]
             - text: Preencha todos os campos
-          - paragraph [ref=e228]: Seus dados estão protegidos e não serão compartilhados.
-        - generic [ref=e229]:
-          - generic [ref=e230]:
-            - img [ref=e231]
-            - generic [ref=e233]: Resposta em até 24h
-          - generic [ref=e234]:
-            - img [ref=e235]
-            - generic [ref=e237]: Dados protegidos
-          - generic [ref=e238]:
-            - img [ref=e239]
-            - generic [ref=e241]: Atendimento pessoal
-  - contentinfo [ref=e242]:
-    - generic [ref=e243]:
-      - generic [ref=e244]:
-        - generic [ref=e245]:
-          - heading "Patricia Taques" [level=3] [ref=e246]
-          - paragraph [ref=e247]: Tarot & Espiritualidade
-        - generic [ref=e248]:
-          - link "@patriciataques" [ref=e249] [cursor=pointer]:
+          - paragraph [ref=e218]: Seus dados estão protegidos e não serão compartilhados.
+        - generic [ref=e219]:
+          - generic [ref=e220]:
+            - img [ref=e221]
+            - generic [ref=e223]: Resposta em até 24h
+          - generic [ref=e224]:
+            - img [ref=e225]
+            - generic [ref=e227]: Dados protegidos
+          - generic [ref=e228]:
+            - img [ref=e229]
+            - generic [ref=e231]: Atendimento pessoal
+  - contentinfo [ref=e232]:
+    - generic [ref=e233]:
+      - generic [ref=e234]:
+        - generic [ref=e235]:
+          - heading "Patricia Taques" [level=3] [ref=e236]
+          - paragraph [ref=e237]: Tarot & Espiritualidade
+        - generic [ref=e238]:
+          - link [ref=e239] [cursor=pointer]:
             - /url: https://instagram.com/patriciataques
-            - img [ref=e250]
-            - generic [ref=e252]: "@patriciataques"
-          - link "WhatsApp" [ref=e253] [cursor=pointer]:
+            - img [ref=e240]
+          - link "WhatsApp" [ref=e242] [cursor=pointer]:
             - /url: https://wa.me/351935917861?text=Ol%C3%A1%20Patricia%2C%20gostaria%20de%20agendar%20uma%20leitura%20de%20tarot.
-            - img [ref=e254]
+            - img [ref=e243]
             - text: WhatsApp
-      - paragraph [ref=e257]: © 2024 Patricia Taques. Todos os direitos reservados.
-  - generic [ref=e260]:
-    - button "Menu" [ref=e261]:
-      - img [ref=e263]
+      - paragraph [ref=e246]: © 2024 Patricia Taques. Todos os direitos reservados.
+  - generic [ref=e249]:
+    - button "Menu" [ref=e250]:
+      - img [ref=e252]
       - generic: Menu
-    - button "Inspect" [ref=e267]:
-      - img [ref=e269]
+    - button "Inspect" [ref=e256]:
+      - img [ref=e258]
       - generic: Inspect
-    - button "Audit" [ref=e271]:
-      - img [ref=e273]
+    - button "Audit" [ref=e260]:
+      - generic [ref=e261]:
+        - img [ref=e262]
+        - img [ref=e265]
       - generic: Audit
-    - button "Settings" [ref=e276]:
-      - img [ref=e278]
+    - button "Settings" [ref=e268]:
+      - img [ref=e270]
       - generic: Settings
 ```
 

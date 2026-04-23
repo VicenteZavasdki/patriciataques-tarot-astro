@@ -22,6 +22,12 @@ export default defineConfig({
     build: {
       cssCodeSplit: true,
       minify: 'esbuild'
+    },
+    resolve: {
+      dedupe: ['react', 'react-dom']
+    },
+    ssr: {
+      noExternal: ['react', 'react-dom', 'react-hook-form', 'zod', '@hookform/resolvers']
     }
   },
   prefetch: {

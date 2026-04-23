@@ -6,30 +6,25 @@
 
 # Test info
 
-- Name: pages/index.spec.ts >> Landing Page >> trust metrics are displayed
-- Location: tests/e2e/pages/index.spec.ts:18:3
+- Name: pages/index.spec.ts >> Contact Form (LeadForm) >> form enables submit when valid
+- Location: tests/e2e/pages/index.spec.ts:109:3
 
 # Error details
 
 ```
-Error: expect(locator).toBeVisible() failed
-
-Locator: locator('text=Anos')
-Expected: visible
-Error: strict mode violation: locator('text=Anos') resolved to 2 elements:
-    1) <span class="text-foreground">Arcanos</span> aka getByText('Arcanos')
-    2) <div class="text-sm uppercase tracking-wider mt-1">Anos</div> aka getByText('Anos', { exact: true })
+Error: locator.selectOption: Error: strict mode violation: locator('select') resolved to 2 elements:
+    1) <select name="country" id="lead-country" aria-invalid="false" aria-required="true" class="w-full px-4 py-3 bg-background-card border-2 rounded-lg text-foreground transition-all focus:outline-none border-border focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20">…</select> aka getByLabel('País *')
+    2) <select name="dev-toolbar-select">…</select> aka locator('select[name="dev-toolbar-select"]')
 
 Call log:
-  - Expect "toBeVisible" with timeout 5000ms
-  - waiting for locator('text=Anos')
+  - waiting for locator('select')
 
 ```
 
 # Page snapshot
 
 ```yaml
-- generic [active] [ref=e1]:
+- generic [ref=e1]:
   - main [ref=e2]:
     - generic [ref=e8]:
       - generic [ref=e10]: ✨ Leituras de Tarot Profundas
@@ -235,86 +230,79 @@ Call log:
             - generic [ref=e211]: Nome *
             - textbox "Nome *" [ref=e212]:
               - /placeholder: Seu nome completo
-          - generic [ref=e213]:
-            - generic [ref=e214]: Email *
-            - textbox "Email *" [ref=e215]:
+              - text: Maria Silva
+            - alert [ref=e213]: Nome deve conter apenas letras
+          - generic [ref=e214]:
+            - generic [ref=e215]: Email *
+            - textbox "Email *" [ref=e216]:
               - /placeholder: seu@email.com
-          - generic [ref=e216]:
-            - generic [ref=e217]: Telefone/WhatsApp *
-            - textbox "Telefone/WhatsApp *" [ref=e218]:
+              - text: maria@email.com
+          - generic [ref=e217]:
+            - generic [ref=e218]: Telefone/WhatsApp *
+            - textbox "Telefone/WhatsApp *" [active] [ref=e219]:
               - /placeholder: +55 11 99999-9999
-          - generic [ref=e219]:
-            - generic [ref=e220]: País *
-            - combobox "País *" [ref=e221]:
+              - text: +55 11 99999-9999
+            - alert [ref=e220]: Telefone inválido
+          - generic [ref=e221]:
+            - generic [ref=e222]: País *
+            - combobox "País *" [ref=e223]:
               - option "Selecione seu país" [selected]
               - option "Brasil 🇧🇷"
               - option "Portugal 🇵🇹"
               - option "Espanha 🇪🇸"
               - option "Outro"
-          - generic [ref=e222]:
-            - generic [ref=e223]: Mensagem (opcional)
-            - textbox "Mensagem (opcional)" [ref=e224]:
+          - generic [ref=e224]:
+            - generic [ref=e225]: Mensagem (opcional)
+            - textbox "Mensagem (opcional)" [ref=e226]:
               - /placeholder: Como posso te ajudar? Qual tema te interessa?
-          - button "Preencha todos os campos" [disabled] [ref=e225]:
-            - img [ref=e226]
+          - button "Preencha todos os campos" [disabled] [ref=e227]:
+            - img [ref=e228]
             - text: Preencha todos os campos
-          - paragraph [ref=e228]: Seus dados estão protegidos e não serão compartilhados.
-        - generic [ref=e229]:
-          - generic [ref=e230]:
-            - img [ref=e231]
-            - generic [ref=e233]: Resposta em até 24h
-          - generic [ref=e234]:
-            - img [ref=e235]
-            - generic [ref=e237]: Dados protegidos
-          - generic [ref=e238]:
-            - img [ref=e239]
-            - generic [ref=e241]: Atendimento pessoal
-  - contentinfo [ref=e242]:
-    - generic [ref=e243]:
-      - generic [ref=e244]:
-        - generic [ref=e245]:
-          - heading "Patricia Taques" [level=3] [ref=e246]
-          - paragraph [ref=e247]: Tarot & Espiritualidade
-        - generic [ref=e248]:
-          - link "@patriciataques" [ref=e249] [cursor=pointer]:
+          - paragraph [ref=e230]: Seus dados estão protegidos e não serão compartilhados.
+        - generic [ref=e231]:
+          - generic [ref=e232]:
+            - img [ref=e233]
+            - generic [ref=e235]: Resposta em até 24h
+          - generic [ref=e236]:
+            - img [ref=e237]
+            - generic [ref=e239]: Dados protegidos
+          - generic [ref=e240]:
+            - img [ref=e241]
+            - generic [ref=e243]: Atendimento pessoal
+  - contentinfo [ref=e244]:
+    - generic [ref=e245]:
+      - generic [ref=e246]:
+        - generic [ref=e247]:
+          - heading "Patricia Taques" [level=3] [ref=e248]
+          - paragraph [ref=e249]: Tarot & Espiritualidade
+        - generic [ref=e250]:
+          - link "@patriciataques" [ref=e251] [cursor=pointer]:
             - /url: https://instagram.com/patriciataques
-            - img [ref=e250]
-            - generic [ref=e252]: "@patriciataques"
-          - link "WhatsApp" [ref=e253] [cursor=pointer]:
+            - img [ref=e252]
+            - generic [ref=e254]: "@patriciataques"
+          - link "WhatsApp" [ref=e255] [cursor=pointer]:
             - /url: https://wa.me/351935917861?text=Ol%C3%A1%20Patricia%2C%20gostaria%20de%20agendar%20uma%20leitura%20de%20tarot.
-            - img [ref=e254]
+            - img [ref=e256]
             - text: WhatsApp
-      - paragraph [ref=e257]: © 2024 Patricia Taques. Todos os direitos reservados.
-  - generic [ref=e260]:
-    - button "Menu" [ref=e261]:
-      - img [ref=e263]
+      - paragraph [ref=e259]: © 2024 Patricia Taques. Todos os direitos reservados.
+  - generic [ref=e262]:
+    - button "Menu" [ref=e263]:
+      - img [ref=e265]
       - generic: Menu
-    - button "Inspect" [ref=e267]:
-      - img [ref=e269]
+    - button "Inspect" [ref=e269]:
+      - img [ref=e271]
       - generic: Inspect
-    - button "Audit" [ref=e271]:
-      - img [ref=e273]
+    - button "Audit" [ref=e273]:
+      - img [ref=e275]
       - generic: Audit
-    - button "Settings" [ref=e276]:
-      - img [ref=e278]
+    - button "Settings" [ref=e278]:
+      - img [ref=e280]
       - generic: Settings
 ```
 
 # Test source
 
 ```ts
-  1   | import { test, expect } from '@playwright/test';
-  2   | 
-  3   | test.describe('Landing Page', () => {
-  4   |   test.beforeEach(async ({ page }) => {
-  5   |     await page.goto('/');
-  6   |   });
-  7   | 
-  8   |   test('page loads without errors', async ({ page }) => {
-  9   |     await expect(page).toHaveTitle(/Patricia Taques/);
-  10  |   });
-  11  | 
-  12  |   test('hero section is visible with animations', async ({ page }) => {
   13  |     await expect(page.locator('h1')).toBeVisible();
   14  |     await expect(page.locator('h1')).toContainText('Descubra');
   15  |     await expect(page.locator('text=Caminho')).toBeVisible();
@@ -322,8 +310,7 @@ Call log:
   17  | 
   18  |   test('trust metrics are displayed', async ({ page }) => {
   19  |     await expect(page.locator('text=+300')).toBeVisible();
-> 20  |     await expect(page.locator('text=Anos')).toBeVisible();
-      |                                             ^ Error: expect(locator).toBeVisible() failed
+  20  |     await expect(page.locator('text=Anos')).toBeVisible();
   21  |   });
   22  | 
   23  |   test('process section has 3 steps', async ({ page }) => {
@@ -416,7 +403,8 @@ Call log:
   110 |     await page.locator('input[placeholder*=\"nome\"]').fill('Maria Silva');
   111 |     await page.locator('input[type=\"email\"]').fill('maria@email.com');
   112 |     await page.locator('input[type=\"tel\"]').fill('+55 11 99999-9999');
-  113 |     await page.locator('select').selectOption('BR');
+> 113 |     await page.locator('select').selectOption('BR');
+      |                                  ^ Error: locator.selectOption: Error: strict mode violation: locator('select') resolved to 2 elements:
   114 | 
   115 |     const submitBtn = page.locator('button[type=\"submit\"]');
   116 |     await expect(submitBtn).toBeEnabled();
@@ -424,4 +412,97 @@ Call log:
   118 |   });
   119 | });
   120 | 
+  121 | test.describe('Pricing Section', () => {
+  122 |   test.beforeEach(async ({ page }) => {
+  123 |     await page.goto('/');
+  124 |     await page.locator('#pricing').scrollIntoViewIfNeeded();
+  125 |   });
+  126 | 
+  127 |   test('shows Brazil pricing card', async ({ page }) => {
+  128 |     await expect(page.locator('text=Leitura Brasil')).toBeVisible();
+  129 |     await expect(page.locator('text=R$')).toBeVisible();
+  130 |     await expect(page.locator('text=Agendar no WhatsApp').first()).toBeVisible();
+  131 |   });
+  132 | 
+  133 |   test('shows Europe pricing card', async ({ page }) => {
+  134 |     await expect(page.locator('text=Leitura Europa')).toBeVisible();
+  135 |     await expect(page.locator('text=€')).toBeVisible();
+  136 |     await expect(page.locator('text=Book via WhatsApp').first()).toBeVisible();
+  137 |   });
+  138 | 
+  139 |   test('Brazil WhatsApp button has correct message', async ({ page }) => {
+  140 |     const brazilBtn = page.locator('text=Agendar no WhatsApp').first();
+  141 |     const href = await brazilBtn.getAttribute('href');
+  142 |     expect(href).toContain('wa.me');
+  143 |     expect(href).toContain('agendar');
+  144 |   });
+  145 | 
+  146 |   test('link to payment section exists', async ({ page }) => {
+  147 |     const payWithCardLink = page.locator('text=Ou pagar com cartão');
+  148 |     await expect(payWithCardLink.first()).toBeVisible();
+  149 |   });
+  150 | });
+  151 | 
+  152 | test.describe('Payment Section', () => {
+  153 |   test.beforeEach(async ({ page }) => {
+  154 |     await page.goto('/#payment');
+  155 |     await page.waitForSelector('#payment', { state: 'visible' });
+  156 |   });
+  157 | 
+  158 |   test('package selection is visible', async ({ page }) => {
+  159 |     await expect(page.locator('text=R$ 260,00')).toBeVisible();
+  160 |     await expect(page.locator('text=€ 150,00')).toBeVisible();
+  161 |   });
+  162 | 
+  163 |   test('can select Brazil package', async ({ page }) => {
+  164 |     await page.locator('text=R$ 260,00').click();
+  165 |     await expect(page.locator('text=Dados para Pagamento')).toBeVisible();
+  166 |     await expect(page.locator('text=NIF')).not.toBeVisible();
+  167 |   });
+  168 | 
+  169 |   test('can select Europe package - NIF required', async ({ page }) => {
+  170 |     await page.locator('text=€ 150,00').click();
+  171 |     await expect(page.locator('text=Dados para Pagamento')).toBeVisible();
+  172 |     await expect(page.locator('text=NIF')).toBeVisible();
+  173 |   });
+  174 | });
+  175 | 
+  176 | test.describe('Navigation', () => {
+  177 |   test('scroll to different sections', async ({ page }) => {
+  178 |     await page.goto('/');
+  179 |     await expect(page.locator('h1')).toBeVisible();
+  180 | 
+  181 |     await page.locator('#pricing').scrollIntoViewIfNeeded();
+  182 |     await expect(page.locator('text=Investimento')).toBeVisible();
+  183 | 
+  184 |     await page.locator('#agendar').scrollIntoViewIfNeeded();
+  185 |     await expect(page.locator('text=Agende sua Leitura')).toBeVisible();
+  186 |   });
+  187 | 
+  188 |   test('WhatsApp links open in new tab', async ({ page }) => {
+  189 |     const whatsappLink = page.locator('a[href*=\"wa.me\"]').first();
+  190 |     await expect(whatsappLink).toHaveAttribute('target', '_blank');
+  191 |     await expect(whatsappLink).toHaveAttribute('rel', /noopener/);
+  192 |   });
+  193 | 
+  194 |   test('Instagram link opens in new tab', async ({ page }) => {
+  195 |     const instagramLink = page.locator('a[href*=\"instagram.com\"]');
+  196 |     await expect(instagramLink.first()).toHaveAttribute('target', '_blank');
+  197 |   });
+  198 | });
+  199 | 
+  200 | test.describe('SEO & Meta', () => {
+  201 |   test('has correct meta tags', async ({ page }) => {
+  202 |     await page.goto('/');
+  203 |     const description = await page.locator('meta[name=\"description\"]').getAttribute('content');
+  204 |     expect(description).toBeTruthy();
+  205 |     expect(description).toContain('tarot');
+  206 |   });
+  207 | 
+  208 |   test('has OG tags for social sharing', async ({ page }) => {
+  209 |     await page.goto('/');
+  210 |     await expect(page.locator('meta[property=\"og:title\"]')).toHaveAttribute('content', /Patricia Taques/);
+  211 |     await expect(page.locator('meta[property=\"og:type\"]')).toHaveAttribute('content', 'website');
+  212 |   });
+  213 | 
 ```
