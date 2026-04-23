@@ -40,7 +40,7 @@ export default function LeadForm({ whatsappNumber }: Props) {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid, dirtyFields }
+    formState: { errors, isValid }
   } = useForm<LeadFormData>({
     resolver: zodResolver(leadSchema),
     mode: 'onChange',
@@ -86,58 +86,74 @@ Gostaria de saber mais sobre suas leituras de tarot.`;
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className='space-y-5 max-w-md mx-auto'>
+    <form onSubmit={handleSubmit(onSubmit)} className='space-y-5 max-w-md mx-auto' aria-label='Formulário de contato'>
       <div>
-        <label className='block text-sm font-semibold mb-2 text-foreground'>
+        <label htmlFor='lead-name' className='block text-sm font-semibold mb-2 text-foreground'>
           Nome *
         </label>
         <input
           {...register('name')}
+          id='lead-name'
           type='text'
           placeholder='Seu nome completo'
+          aria-invalid={!!errors.name}
+          aria-describedby={errors.name ? 'lead-name-error' : undefined}
+          aria-required='true'
           className={`w-full px-4 py-3 bg-background-card border-2 rounded-lg text-foreground placeholder:text-muted-foreground transition-all focus:outline-none ${errors.name ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20'}`}
         />
         {errors.name && (
-          <p className='text-red-500 text-sm mt-1' role='alert'>{errors.name.message}</p>
+          <p id='lead-name-error' className='text-red-500 text-sm mt-1' role='alert'>{errors.name.message}</p>
         )}
       </div>
 
       <div>
-        <label className='block text-sm font-semibold mb-2 text-foreground'>
+        <label htmlFor='lead-email' className='block text-sm font-semibold mb-2 text-foreground'>
           Email *
         </label>
         <input
           {...register('email')}
+          id='lead-email'
           type='email'
           placeholder='seu@email.com'
+          aria-invalid={!!errors.email}
+          aria-describedby={errors.email ? 'lead-email-error' : undefined}
+          aria-required='true'
           className={`w-full px-4 py-3 bg-background-card border-2 rounded-lg text-foreground placeholder:text-muted-foreground transition-all focus:outline-none ${errors.email ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20'}`}
         />
         {errors.email && (
-          <p className='text-red-500 text-sm mt-1' role='alert'>{errors.email.message}</p>
+          <p id='lead-email-error' className='text-red-500 text-sm mt-1' role='alert'>{errors.email.message}</p>
         )}
       </div>
 
       <div>
-        <label className='block text-sm font-semibold mb-2 text-foreground'>
+        <label htmlFor='lead-phone' className='block text-sm font-semibold mb-2 text-foreground'>
           Telefone/WhatsApp *
         </label>
         <input
           {...register('phone')}
+          id='lead-phone'
           type='tel'
           placeholder='+55 11 99999-9999'
+          aria-invalid={!!errors.phone}
+          aria-describedby={errors.phone ? 'lead-phone-error' : undefined}
+          aria-required='true'
           className={`w-full px-4 py-3 bg-background-card border-2 rounded-lg text-foreground placeholder:text-muted-foreground transition-all focus:outline-none ${errors.phone ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20'}`}
         />
         {errors.phone && (
-          <p className='text-red-500 text-sm mt-1' role='alert'>{errors.phone.message}</p>
+          <p id='lead-phone-error' className='text-red-500 text-sm mt-1' role='alert'>{errors.phone.message}</p>
         )}
       </div>
 
       <div>
-        <label className='block text-sm font-semibold mb-2 text-foreground'>
+        <label htmlFor='lead-country' className='block text-sm font-semibold mb-2 text-foreground'>
           País *
         </label>
         <select
           {...register('country')}
+          id='lead-country'
+          aria-invalid={!!errors.country}
+          aria-describedby={errors.country ? 'lead-country-error' : undefined}
+          aria-required='true'
           className={`w-full px-4 py-3 bg-background-card border-2 rounded-lg text-foreground transition-all focus:outline-none ${errors.country ? 'border-red-500 focus:border-red-500' : 'border-border focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20'}`}
         >
           <option value=''>Selecione seu país</option>
@@ -147,22 +163,23 @@ Gostaria de saber mais sobre suas leituras de tarot.`;
           <option value='OTHER'>Outro</option>
         </select>
         {errors.country && (
-          <p className='text-red-500 text-sm mt-1' role='alert'>{errors.country.message}</p>
+          <p id='lead-country-error' className='text-red-500 text-sm mt-1' role='alert'>{errors.country.message}</p>
         )}
       </div>
 
       <div>
-        <label className='block text-sm font-semibold mb-2 text-foreground'>
+        <label htmlFor='lead-message' className='block text-sm font-semibold mb-2 text-foreground'>
           Mensagem (opcional)
         </label>
         <textarea
           {...register('message')}
+          id='lead-message'
           rows={3}
           placeholder='Como posso te ajudar? Qual tema te interessa?'
           className='w-full px-4 py-3 bg-background-card border-2 border-border rounded-lg text-foreground placeholder:text-muted-foreground transition-all focus:outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-500/20 resize-none'
         />
         {errors.message && (
-          <p className='text-red-500 text-sm mt-1' role='alert'>{errors.message.message}</p>
+          <p id='lead-message-error' className='text-red-500 text-sm mt-1' role='alert'>{errors.message.message}</p>
         )}
       </div>
 

@@ -45,7 +45,6 @@ const packages = {
 };
 
 export default function PaymentForm() {
-  const [selectedPackage, setSelectedPackage] = useState<'brazil' | 'europe' | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -97,89 +96,105 @@ export default function PaymentForm() {
 
   return (
     <div className='space-y-8 max-w-2xl mx-auto'>
-      <div className='grid md:grid-cols-2 gap-4'>
-        {Object.entries(packages).map(([key, pkg]) => (
-          <button
-            key={key}
-            type='button'
-            onClick={() => {
-              setSelectedPackage(key as 'brazil' | 'europe');
-              setValue('package', key as 'brazil' | 'europe');
-            }}
-            className={`p-6 rounded-2xl border-2 transition-all text-left ${
-              selectedPackageValue === key
-                ? 'border-gold-500 bg-gold-950/30'
-                : 'border-border bg-background-card hover:border-gold-700'
-            }`}
-          >
-            <div className='text-2xl font-bold text-gold-400 font-[family-name:var(--font-display)] mb-1'>
-              {pkg.price}
-            </div>
-            <div className='font-semibold text-foreground mb-2'>{pkg.name}</div>
-            <div className='text-sm text-muted-foreground'>{pkg.description}</div>
-          </button>
-        ))}
-      </div>
+      <fieldset>
+        <legend className='sr-only'>Selecione um pacote de leitura</legend>
+        <div className='grid md:grid-cols-2 gap-4'>
+          {Object.entries(packages).map(([key, pkg]) => (
+            <button
+              key={key}
+              type='button'
+              role='radio'
+              aria-checked={selectedPackageValue === key}
+              onClick={() => {
+                setValue('package', key as 'brazil' | 'europe');
+              }}
+              className={`p-6 rounded-2xl border-2 transition-all text-left ${
+                selectedPackageValue === key
+                  ? 'border-gold-500 bg-gold-950/30'
+                  : 'border-border bg-background-card hover:border-gold-700'
+              }`}
+            >
+              <div className='text-2xl font-bold text-gold-400 font-[family-name:var(--font-display)] mb-1'>
+                {pkg.price}
+              </div>
+              <div className='font-semibold text-foreground mb-2'>{pkg.name}</div>
+              <div className='text-sm text-muted-foreground'>{pkg.description}</div>
+            </button>
+          ))}
+        </div>
+      </fieldset>
 
       {selectedPackageValue && (
-        <form onSubmit={handleSubmit(onSubmit)} className='space-y-5 p-6 bg-background-card rounded-2xl border border-border'>
+        <form onSubmit={handleSubmit(onSubmit)} className='space-y-5 p-6 bg-background-card rounded-2xl border border-border' aria-label='Formulário de pagamento'>
           <h3 className='text-xl font-[family-name:var(--font-heading)] text-center mb-4'>
             Dados para Pagamento
           </h3>
 
           <div>
-            <label className='block text-sm font-semibold mb-2 text-foreground'>
+            <label htmlFor='payment-name' className='block text-sm font-semibold mb-2 text-foreground'>
               Nome completo *
             </label>
             <input
               {...register('name')}
+              id='payment-name'
               type='text'
               placeholder='Seu nome completo'
+              aria-invalid={!!errors.name}
+              aria-describedby={errors.name ? 'payment-name-error' : undefined}
+              aria-required='true'
               className={`w-full px-4 py-3 bg-background border-2 rounded-lg text-foreground placeholder:text-muted-foreground transition-all focus:outline-none ${
                 errors.name ? 'border-red-500' : 'border-border focus:border-gold-500'
               }`}
             />
-            {errors.name && <p className='text-red-500 text-sm mt-1'>{errors.name.message}</p>}
+            {errors.name && <p id='payment-name-error' className='text-red-500 text-sm mt-1'>{errors.name.message}</p>}
           </div>
 
           <div>
-            <label className='block text-sm font-semibold mb-2 text-foreground'>
+            <label htmlFor='payment-email' className='block text-sm font-semibold mb-2 text-foreground'>
               Email *
             </label>
             <input
               {...register('email')}
+              id='payment-email'
               type='email'
               placeholder='seu@email.com'
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? 'payment-email-error' : undefined}
+              aria-required='true'
               className={`w-full px-4 py-3 bg-background border-2 rounded-lg text-foreground placeholder:text-muted-foreground transition-all focus:outline-none ${
                 errors.email ? 'border-red-500' : 'border-border focus:border-gold-500'
               }`}
             />
-            {errors.email && <p className='text-red-500 text-sm mt-1'>{errors.email.message}</p>}
+            {errors.email && <p id='payment-email-error' className='text-red-500 text-sm mt-1'>{errors.email.message}</p>}
           </div>
 
           {selectedPackageValue === 'europe' && (
             <div>
-              <label className='block text-sm font-semibold mb-2 text-foreground'>
+              <label htmlFor='payment-nif' className='block text-sm font-semibold mb-2 text-foreground'>
                 NIF / Tax ID *
               </label>
               <input
                 {...register('nif')}
+                id='payment-nif'
                 type='text'
                 placeholder='123456789'
                 maxLength={9}
+                aria-invalid={!!errors.nif}
+                aria-describedby={errors.nif ? 'payment-nif-error' : 'nif-hint'}
+                aria-required='true'
                 className={`w-full px-4 py-3 bg-background border-2 rounded-lg text-foreground placeholder:text-muted-foreground transition-all focus:outline-none ${
                   errors.nif ? 'border-red-500' : 'border-border focus:border-gold-500'
                 }`}
               />
-              <p className='text-xs text-muted-foreground mt-1'>
+              <p id='nif-hint' className='text-xs text-muted-foreground mt-1'>
                 Obrigatório para emissão de fatura em Portugal
               </p>
-              {errors.nif && <p className='text-red-500 text-sm mt-1'>{errors.nif.message}</p>}
+              {errors.nif && <p id='payment-nif-error' className='text-red-500 text-sm mt-1'>{errors.nif.message}</p>}
             </div>
           )}
 
           {error && (
-            <div className='p-4 bg-red-950/30 border border-red-800 rounded-lg text-red-400 text-sm'>
+            <div className='p-4 bg-red-950/30 border border-red-800 rounded-lg text-red-400 text-sm' role='alert' aria-live='assertive'>
               {error}
             </div>
           )}

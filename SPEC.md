@@ -250,6 +250,6 @@ npm test
 - [x] Design System (tokens, animations)
 - [x] Scroll reveal animations
 - [x] Sitemap + robots.txt
-- [ ] E2E Tests with Playwright
+- [x] E2E Tests with Playwright
 - [ ] Analytics (Plausible)
 - [ ] Error Monitoring (Sentry)
