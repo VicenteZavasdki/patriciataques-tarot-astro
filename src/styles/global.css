@@ -3,6 +3,7 @@
    Design System: Mystical Luxury
    ========================================================================== */
 
+@import 'tailwindcss';
 @import './tokens.css';
 @import './animations.css';
 
