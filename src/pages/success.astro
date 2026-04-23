@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WhatsAppButton from '../components/ui/WhatsAppButton.astro';
+---
+
+<BaseLayout
+  title='Pagamento Confirmado | Patricia Taques'
+  description='Sua leitura de tarot foi confirmada com sucesso!'
+>
+  <main class='min-h-screen flex items-center justify-center py-20'>
+    <div class='container-narrow text-center'>
+      <div class='animate-fade-in-up mb-8'>
+        <div class='text-7xl mb-6'>✨</div>
+        <h1 class='text-4xl md:text-5xl font-[family-name:var(--font-display)] font-bold text-gold-400 mb-4'>
+          Pagamento Confirmado!
+        </h1>
+        <p class='text-xl text-foreground mb-8'>
+          Sua sessão de tarot foi reservada com sucesso.
+        </p>
+      </div>
+
+      <div class='animate-fade-in-up bg-background-card border border-gold-800 rounded-2xl p-8 mb-8' style='animation-delay: 200ms;'>
+        <h2 class='text-xl font-[family-name:var(--font-heading)] mb-4'>Próximos Passos</h2>
+        <ul class='text-left space-y-3 text-muted-foreground'>
+          <li class='flex items-start gap-3'>
+            <span class='text-gold-500 text-xl'>1.</span>
+            <span>Você receberá um email de confirmação em breve</span>
+          </li>
+          <li class='flex items-start gap-3'>
+            <span class='text-gold-500 text-xl'>2.</span>
+            <span>A Patricia entrará em contato via WhatsApp para confirmar os detalhes</span>
+          </li>
+          <li class='flex items-start gap-3'>
+            <span class='text-gold-500 text-xl'>3.</span>
+            <span>Prepare suas perguntas e intenções para a leitura</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class='animate-fade-in-up' style='animation-delay: 400ms;'>
+        <WhatsAppButton size='lg'>
+          Falar com a Patricia
+        </WhatsAppButton>
+      </div>
+
+      <div class='animate-fade-in-up mt-12' style='animation-delay: 600ms;'>
+        <a
+          href='/'
+          class='text-gold-400 hover:text-gold-300 underline'
+        >
+          ← Voltar ao site
+        </a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

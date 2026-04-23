@@ -1,56 +1,72 @@
 ---
 import Button from '../ui/Button.astro';
 import Badge from '../ui/Badge.astro';
+import WhatsAppButton from '../ui/WhatsAppButton.astro';
 import { siteConfig } from '../../lib/constants';
-
-const whatsappLink = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Olá Patricia! Gostaria de agendar uma leitura de tarot.')}`;
 ---
 
 <section class='relative min-h-screen flex items-center justify-center overflow-hidden'>
   <div class='absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold-900/20 via-background to-background'></div>
 
+  <div class='absolute inset-0 opacity-[0.03]'>
+    <div class='absolute top-1/4 left-1/4 w-96 h-96 bg-gold-500 rounded-full blur-[128px] animate-pulse'></div>
+    <div class='absolute bottom-1/4 right-1/4 w-64 h-64 bg-gold-600 rounded-full blur-[96px] animate-pulse' style='animation-delay: 1s;'></div>
+  </div>
+
   <div class='relative z-10 container-wide py-20 text-center'>
-    <div class='animate-fade-in mb-8'>
-      <Badge variant='gold'>🔮 Leituras de Tarot Profundas</Badge>
+    <div class='animate-fade-in-up mb-8' style='animation-delay: 0ms;'>
+      <Badge variant='gold'>✨ Leituras de Tarot Profundas</Badge>
     </div>
 
-    <h1 class='animate-slide-up font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight'>
+    <h1 class='animate-fade-in-up font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-wide uppercase' style='animation-delay: 200ms;'>
       <span class='text-foreground'>Descubra seu</span>
       <br />
-      <span class='gradient-gold bg-clip-text text-transparent'>Caminho</span>
-      <span class='text-foreground'> com os</span>
+      <span class='gradient-gold-text'>Caminho</span>
+      <span class='text-foreground'> através dos</span>
       <br />
-      <span class='text-foreground'>Cards</span>
+      <span class='text-foreground'>Arcanos</span>
     </h1>
 
-    <p class='animate-slide-up text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10' style='animation-delay: 100ms;'>
+    <p class='animate-fade-in-up text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed' style='animation-delay: 400ms;'>
       Leituras personalizadas que revelam insights profundos e guiam suas decisões com sabedoria ancestral.
     </p>
 
-    <div class='animate-slide-up flex flex-col sm:flex-row gap-4 justify-center items-center' style='animation-delay: 200ms;'>
-      <Button variant='default' size='lg' href='#agendar'>
-        🔮 Agendar Leitura
-      </Button>
-      <Button variant='outline' size='lg' href={siteConfig.instagram}>
-        📱 Seguir no Instagram
+    <div class='animate-fade-in-up flex flex-col sm:flex-row gap-4 justify-center items-center' style='animation-delay: 600ms;'>
+      <WhatsAppButton size='lg'>
+        Agendar via WhatsApp
+      </WhatsAppButton>
+      <Button variant='outline' size='lg' href='#pricing'>
+        Ver Preços
       </Button>
     </div>
 
-    <div class='animate-slide-up mt-16 flex items-center justify-center gap-8 text-muted-foreground' style='animation-delay: 300ms;'>
-      <div class='text-center'>
-        <div class='text-3xl font-bold text-gold-500'>+300</div>
-        <div class='text-sm'>Leituras</div>
+    <div class='animate-fade-in-up mt-20 scroll-reveal flex items-center justify-center gap-8 md:gap-12 text-muted-foreground' style='animation-delay: 800ms;'>
+      <div class='text-center hover-lift'>
+        <div class='text-4xl font-bold text-gold-500 font-[family-name:var(--font-display)]'>+300</div>
+        <div class='text-sm uppercase tracking-wider mt-1'>Leituras</div>
       </div>
       <div class='w-px h-12 bg-border'></div>
-      <div class='text-center'>
-        <div class='text-3xl font-bold text-gold-500'>2+</div>
-        <div class='text-sm'>Anos de experiência</div>
+      <div class='text-center hover-lift'>
+        <div class='text-4xl font-bold text-gold-500 font-[family-name:var(--font-display)]'>2+</div>
+        <div class='text-sm uppercase tracking-wider mt-1'>Anos</div>
       </div>
-      <div class='w-px h-12 bg-border'></div>
-      <div class='text-center'>
-        <div class='text-3xl font-bold text-gold-500'>Global</div>
-        <div class='text-sm'>Alcance</div>
+      <div class='w-px h-12 bg-border hidden sm:block'></div>
+      <div class='text-center hover-lift hidden sm:block'>
+        <div class='text-4xl font-bold text-gold-500 font-[family-name:var(--font-display)]'>5⭐</div>
+        <div class='text-sm uppercase tracking-wider mt-1'>Avaliação</div>
       </div>
+    </div>
+
+    <div class='animate-fade-in-up mt-16' style='animation-delay: 1000ms;'>
+      <a
+        href='#agendar'
+        class='inline-flex items-center gap-2 text-muted-foreground hover:text-gold-400 transition-colors animate-float'
+      >
+        <span class='text-sm'>Descubra mais</span>
+        <svg class='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+          <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 14l-7 7m0 0l-7-7m7 7V3' />
+        </svg>
+      </a>
     </div>
   </div>
 

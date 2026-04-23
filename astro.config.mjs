@@ -3,16 +3,19 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import cloudflare from '@astrojs/cloudflare';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: import.meta.env.SITE_URL || 'https://patriciataques.com',
   output: 'server',
   adapter: cloudflare({
     imageService: 'passthrough',
-    entrypointResolution: 'auto'
+    entrypointResolution: 'auto',
+    compatibilityFlags: ['nodejs_compat']
   }),
   integrations: [
-    react()
+    react(),
+    sitemap()
   ],
   vite: {
     plugins: [tailwindcss()],

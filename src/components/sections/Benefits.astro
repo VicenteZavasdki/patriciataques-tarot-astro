@@ -3,21 +3,21 @@ import Card from '../ui/Card.astro';
 import { benefits } from '../../data/benefits';
 ---
 
-<section class='py-20'>
+<section class='py-20 scroll-reveal'>
   <div class='container-wide'>
-    <h2 class='text-3xl md:text-4xl font-heading text-center mb-4'>
-      O que <span class='gradient-gold bg-clip-text text-transparent'>Inclui</span>
+    <h2 class='text-3xl md:text-4xl font-[family-name:var(--font-heading)] text-center mb-4 scroll-reveal'>
+      O que <span class='gradient-gold-text'>Inclui</span>
     </h2>
-    <p class='text-muted-foreground text-center mb-16 max-w-xl mx-auto'>
-      Cada leitura é uma experiência completa, pensada para você aproveitar ao máximo.
+    <p class='text-muted-foreground text-center mb-16 max-w-xl mx-auto scroll-reveal'>
+      Cada leitura é uma experiência única, pensada para guiar sua jornada espiritual.
     </p>
 
-    <div class='grid sm:grid-cols-2 lg:grid-cols-4 gap-6'>
-      {benefits.map((benefit) => (
-        <Card variant='gold' padding='lg' class='text-center'>
-          <div class='text-5xl mb-4'>{benefit.icon}</div>
-          <h3 class='text-xl font-heading mb-3'>{benefit.title}</h3>
-          <p class='text-muted-foreground text-sm'>{benefit.description}</p>
+    <div class='grid sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children'>
+      {benefits.map((benefit, index) => (
+        <Card variant='gold' padding='lg' class='text-center hover-lift group'>
+          <div class='text-5xl mb-4 group-hover:scale-110 transition-transform duration-300'>{benefit.icon}</div>
+          <h3 class='text-xl font-[family-name:var(--font-heading)] mb-3 text-foreground'>{benefit.title}</h3>
+          <p class='text-muted-foreground text-sm leading-relaxed'>{benefit.description}</p>
         </Card>
       ))}
     </div>

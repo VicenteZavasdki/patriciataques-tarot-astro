@@ -1,84 +1,97 @@
 ---
 import Card from '../ui/Card.astro';
-import Button from '../ui/Button.astro';
+import WhatsAppButton from '../ui/WhatsAppButton.astro';
 import { pricingConfig, siteConfig } from '../../lib/constants';
 
-const whatsappLink = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Olá Patricia! Gostaria de saber mais sobre as leituras de tarot.')}`;
+const whatsappLinkBrasil = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Olá Patricia! Gostaria de agendar uma leitura de tarot para o Brasil.')}`;
+const whatsappLinkEuropa = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent('Hello Patricia! I would like to book a tarot reading session.')}`;
 
 const formatPrice = (amount: number, currency: string) => {
-  return new Intl.NumberFormat('pt-BR', {
+  return new Intl.NumberFormat(currency === 'EUR' ? 'pt-PT' : 'pt-BR', {
     style: 'currency',
     currency
   }).format(amount);
 };
 ---
 
-<section class='py-20' id='precos'>
+<section class='py-20 scroll-reveal' id='pricing'>
   <div class='container-wide'>
-    <h2 class='text-3xl md:text-4xl font-heading text-center mb-4'>
-      Investimento na sua <span class='gradient-gold bg-clip-text text-transparent'>Jornada</span>
+    <h2 class='text-3xl md:text-4xl font-[family-name:var(--font-heading)] text-center mb-4 scroll-reveal'>
+      Investimento na sua <span class='gradient-gold-text'>Jornada</span>
     </h2>
-    <p class='text-muted-foreground text-center mb-16 max-w-xl mx-auto'>
+    <p class='text-muted-foreground text-center mb-16 max-w-xl mx-auto scroll-reveal'>
       Escolha a opção que se encaixa melhor na sua realidade.
     </p>
 
-    <div class='grid md:grid-cols-2 gap-8 max-w-3xl mx-auto'>
-      <Card variant='gold' padding='lg' class='text-center relative overflow-hidden'>
-        <div class='absolute top-0 right-0 bg-gold-500 text-background text-xs font-bold px-3 py-1 rounded-bl-lg'>
+    <div class='grid md:grid-cols-2 gap-8 max-w-4xl mx-auto stagger-children'>
+      <Card variant='gold' padding='lg' class='text-center relative overflow-hidden hover-lift'>
+        <div class='absolute top-0 right-0 bg-gold-500 text-background text-xs font-bold px-4 py-1.5 rounded-bl-lg'>
           Brasil
         </div>
-        <div class='text-muted-foreground mb-2'>Leitura para</div>
-        <div class='text-4xl font-bold text-gold-400 mb-6'>
+        <div class='text-muted-foreground mb-2 font-[family-name:var(--font-body)]'>Leitura completa para</div>
+        <div class='text-4xl font-bold text-gold-400 mb-6 font-[family-name:var(--font-display)]'>
           {formatPrice(pricingConfig.brazil.amount, pricingConfig.brazil.currency)}
         </div>
         <ul class='text-left space-y-3 mb-8'>
-          <li class='flex items-center gap-2 text-foreground'>
-            <span class='text-gold-500'>✓</span> Sessão completa via videochamada
+          <li class='flex items-center gap-3 text-foreground'>
+            <span class='text-gold-500'>✓</span> Sessão via áudio ou video
           </li>
-          <li class='flex items-center gap-2 text-foreground'>
+          <li class='flex items-center gap-3 text-foreground'>
             <span class='text-gold-500'>✓</span> Fotos das cartas tiradas
           </li>
-          <li class='flex items-center gap-2 text-foreground'>
+          <li class='flex items-center gap-3 text-foreground'>
             <span class='text-gold-500'>✓</span> Gravação em áudio
           </li>
-          <li class='flex items-center gap-2 text-foreground'>
+          <li class='flex items-center gap-3 text-foreground'>
             <span class='text-gold-500'>✓</span> Análise escrita detalhada
           </li>
+          <li class='flex items-center gap-3 text-foreground'>
+            <span class='text-gold-500'>✓</span> Suporte via WhatsApp
+          </li>
         </ul>
-        <Button variant='default' size='lg' href={whatsappLink} class='w-full'>
+        <WhatsAppButton size='lg' message='Olá Patricia! Gostaria de agendar uma leitura de tarot para o Brasil.' class='w-full'>
           Agendar no WhatsApp
-        </Button>
+        </WhatsAppButton>
+        <a href='#payment' class='text-sm text-gold-400 hover:text-gold-300 underline'>
+          Ou pagar com cartão →
+        </a>
       </Card>
 
-      <Card variant='hover' padding='lg' class='text-center relative overflow-hidden'>
-        <div class='absolute top-0 right-0 bg-muted-foreground text-background text-xs font-bold px-3 py-1 rounded-bl-lg'>
+      <Card variant='hover' padding='lg' class='text-center relative overflow-hidden hover-lift'>
+        <div class='absolute top-0 right-0 bg-muted-foreground text-background text-xs font-bold px-4 py-1.5 rounded-bl-lg'>
           Europa/Global
         </div>
-        <div class='text-muted-foreground mb-2'>Leitura para</div>
-        <div class='text-4xl font-bold text-foreground mb-6'>
+        <div class='text-muted-foreground mb-2 font-[family-name:var(--font-body)]'>Complete reading for</div>
+        <div class='text-4xl font-bold text-foreground mb-6 font-[family-name:var(--font-display)]'>
           {formatPrice(pricingConfig.europe.amount, pricingConfig.europe.currency)}
         </div>
         <ul class='text-left space-y-3 mb-8'>
-          <li class='flex items-center gap-2 text-foreground'>
-            <span class='text-gold-500'>✓</span> Sessão completa via videochamada
+          <li class='flex items-center gap-3 text-foreground'>
+            <span class='text-gold-500'>✓</span> Session via audio or video
           </li>
-          <li class='flex items-center gap-2 text-foreground'>
-            <span class='text-gold-500'>✓</span> Fotos das cartas tiradas
+          <li class='flex items-center gap-3 text-foreground'>
+            <span class='text-gold-500'>✓</span> Photos of cards taken
           </li>
-          <li class='flex items-center gap-2 text-foreground'>
-            <span class='text-gold-500'>✓</span> Gravação em áudio
+          <li class='flex items-center gap-3 text-foreground'>
+            <span class='text-gold-500'>✓</span> Audio recording
           </li>
-          <li class='flex items-center gap-2 text-foreground'>
-            <span class='text-gold-500'>✓</span> Análise escrita detalhada
+          <li class='flex items-center gap-3 text-foreground'>
+            <span class='text-gold-500'>✓</span> Detailed written analysis
+          </li>
+          <li class='flex items-center gap-3 text-foreground'>
+            <span class='text-gold-500'>✓</span> WhatsApp support
           </li>
         </ul>
-        <Button variant='outline' size='lg' href='#agendar' class='w-full'>
-          Agendar Online
-        </Button>
+        <WhatsAppButton size='lg' message='Hello Patricia! I would like to book a tarot reading session from Europe.' class='w-full'>
+          Book via WhatsApp
+        </WhatsAppButton>
+        <a href='#payment' class='text-sm text-gold-400 hover:text-gold-300 underline'>
+          Or pay with card →
+        </a>
       </Card>
     </div>
 
-    <p class='text-center text-muted-foreground text-sm mt-8'>
+    <p class='text-center text-muted-foreground text-sm mt-8 scroll-reveal'>
       Pagamento via transferência bancária, PIX ou link de pagamento.
     </p>
   </div>

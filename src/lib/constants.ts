@@ -26,12 +26,12 @@ export const processSteps = [
   {
     step: 1,
     title: 'Entre em Contato',
-    description: 'Use o WhatsApp ou agende diretamente online para iniciar sua jornada.'
+    description: 'Use o WhatsApp para iniciar sua jornada espiritual.'
   },
   {
     step: 2,
     title: 'Escolha seu Tipo',
-    description: 'Selecione a leitura ideal para você: presencial ou por videochamada.'
+    description: 'Selecione a leitura ideal para você: presencial ou por áudio/video.'
   },
   {
     step: 3,

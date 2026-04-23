@@ -1,0 +1,311 @@
+/* ==========================================================================
+   ANIMATIONS - Patricia Taques Tarot
+   Dramatic + Elegant Mix
+   ========================================================================== */
+
+/* =================================================================
+   KEYFRAMES
+   ================================================================= */
+
+/* Fade In Up - Elegant entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Down - For elements coming from above */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale In - For modals, cards */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide In Left - For sidebar elements */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In Right - For sidebar elements */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Gold Glow Pulse - Mystical effect */
+@keyframes goldGlowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 161, 44, 0.3),
+                0 0 40px rgba(212, 161, 44, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 161, 44, 0.5),
+                0 0 80px rgba(212, 161, 44, 0.2);
+  }
+}
+
+/* Gold Shimmer - For text highlights */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Float - Subtle floating effect */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Pulse - Subtle attention grabber */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Spin - For loading indicators */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Gradient Shift - For animated backgrounds */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Stagger Delay Classes */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+.delay-900 { animation-delay: 900ms; }
+.delay-1000 { animation-delay: 1000ms; }
+
+/* =================================================================
+   ANIMATION UTILITY CLASSES
+   ================================================================= */
+
+/* Base animation classes */
+.animate-fade-in-up {
+  animation: fadeInUp var(--duration-slower) var(--ease-out-expo) forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown var(--duration-slower) var(--ease-out-expo) forwards;
+  opacity: 0;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--duration-slow) var(--ease-out-expo) forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft var(--duration-slow) var(--ease-out-expo) forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight var(--duration-slow) var(--ease-out-expo) forwards;
+  opacity: 0;
+}
+
+.animate-gold-glow {
+  animation: goldGlowPulse 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* =================================================================
+   SCROLL REVEAL CLASSES
+   ================================================================= */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--duration-slower) var(--ease-out-expo),
+              transform var(--duration-slower) var(--ease-out-expo);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity var(--duration-slower) var(--ease-out-expo),
+              transform var(--duration-slower) var(--ease-out-expo);
+}
+
+.scroll-reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity var(--duration-slower) var(--ease-out-expo),
+              transform var(--duration-slower) var(--ease-out-expo);
+}
+
+.scroll-reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity var(--duration-slower) var(--ease-out-expo),
+              transform var(--duration-slower) var(--ease-out-expo);
+}
+
+.scroll-reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =================================================================
+   GRADIENT TEXT ANIMATION
+   ================================================================= */
+
+.gradient-text-animated {
+  background: linear-gradient(
+    90deg,
+    var(--gold-400) 0%,
+    var(--gold-500) 25%,
+    var(--gold-300) 50%,
+    var(--gold-500) 75%,
+    var(--gold-400) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 4s linear infinite;
+}
+
+/* =================================================================
+   HOVER TRANSITIONS
+   ================================================================= */
+
+.hover-lift {
+  transition: transform var(--duration-normal) var(--ease-out-expo),
+              box-shadow var(--duration-normal) var(--ease-out-expo);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl), var(--shadow-gold);
+}
+
+.hover-scale {
+  transition: transform var(--duration-fast) var(--ease-out-expo);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-glow {
+  transition: box-shadow var(--duration-normal) var(--ease-out-expo);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-gold-lg);
+}
+
+/* =================================================================
+   STAGGERED CHILDREN
+   ================================================================= */
+
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.stagger-children.is-visible > *:nth-child(1) { animation: fadeInUp 0.6s var(--ease-out-expo) 0ms forwards; }
+.stagger-children.is-visible > *:nth-child(2) { animation: fadeInUp 0.6s var(--ease-out-expo) 100ms forwards; }
+.stagger-children.is-visible > *:nth-child(3) { animation: fadeInUp 0.6s var(--ease-out-expo) 200ms forwards; }
+.stagger-children.is-visible > *:nth-child(4) { animation: fadeInUp 0.6s var(--ease-out-expo) 300ms forwards; }
+.stagger-children.is-visible > *:nth-child(5) { animation: fadeInUp 0.6s var(--ease-out-expo) 400ms forwards; }
+.stagger-children.is-visible > *:nth-child(6) { animation: fadeInUp 0.6s var(--ease-out-expo) 500ms forwards; }
+.stagger-children.is-visible > *:nth-child(7) { animation: fadeInUp 0.6s var(--ease-out-expo) 600ms forwards; }
+.stagger-children.is-visible > *:nth-child(8) { animation: fadeInUp 0.6s var(--ease-out-expo) 700ms forwards; }

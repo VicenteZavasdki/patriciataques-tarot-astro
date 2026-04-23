@@ -1,0 +1,32 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'>
+  <defs>
+    <linearGradient id='bg' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' style='stop-color:#0A0A0B'/>
+      <stop offset='100%' style='stop-color:#111113'/>
+    </linearGradient>
+    <linearGradient id='gold' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' style='stop-color:#F5C842'/>
+      <stop offset='100%' style='stop-color:#D4A12C'/>
+    </linearGradient>
+  </defs>
+
+  <rect width='1200' height='630' fill='url(#bg)'/>
+
+  <!-- Decorative circles -->
+  <circle cx='100' cy='100' r='200' fill='#D4A12C' opacity='0.05'/>
+  <circle cx='1100' cy='530' r='250' fill='#D4A12C' opacity='0.05'/>
+
+  <!-- Logo/Icon -->
+  <g transform='translate(540, 200)'>
+    <path d='M60 0 L85 40 L130 50 L95 90 L105 140 L60 120 L15 140 L25 90 L-10 50 L35 40 Z' fill='url(#gold)' opacity='0.3'/>
+  </g>
+
+  <!-- Title -->
+  <text x='600' y='380' font-family='serif' font-size='72' font-weight='bold' fill='url(#gold)' text-anchor='middle'>Patricia Taques</text>
+
+  <!-- Subtitle -->
+  <text x='600' y='450' font-family='sans-serif' font-size='32' fill='#A1A1AA' text-anchor='middle'>Tarot Reader & Spiritual Guide</text>
+
+  <!-- Decorative line -->
+  <line x1='400' y1='500' x2='800' y2='500' stroke='url(#gold)' stroke-width='2' opacity='0.5'/>
+</svg>
