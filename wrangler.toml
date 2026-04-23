@@ -2,31 +2,19 @@ name = \"patriciataques-tarot-astro\"
 main = \"dist/server/entry.mjs\"
 compatibility_date = \"2026-04-22\"
 
-# Routes configuration
-routes = [
-  { pattern = \"patriciataques.com\", zone_name = \"patriciataques.com\" },
-  { pattern = \"www.patriciataques.com\", zone_name = \"patriciataques.com\" }
-]
+[[routes]]
+pattern = \"patriciataques.com\"
+zone_name = \"patriciataques.com\"
 
-# Assets
+[[routes]]
+pattern = \"www.patriciataques.com\"
+zone_name = \"patriciataques.com\"
+
 assets = { directory = \"dist/client\" }
 
-# Observability
 [observability]
-enabled = false
-
-[observability.logs]
 enabled = true
-head_sampling_rate = 1
-persist = true
-invocation_logs = true
 
-[observability.traces]
-enabled = true
-persist = true
-head_sampling_rate = 1
-
-# KV Namespace for sessions
 [[kv_namespaces]]
 binding = \"SESSION\"
-id = \"\"  # Will be bound to existing namespace
+id = \"\"
